@@ -19,4 +19,10 @@ public class WeightRecordController {
 		return "management.weightRecord.petList";
 	}
 	
+	@RequestMapping("reg")
+	public String reg() {
+		
+		return "management.weightRecord.reg";
+	}
+	
 }

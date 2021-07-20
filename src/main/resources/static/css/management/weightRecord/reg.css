@@ -1,0 +1,163 @@
+@charset "UTF-8";
+/* ------------main-------------------- */
+#main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+}
+
+        /* -------------------------------- */
+    
+        .form{
+            border: none;
+            padding: 0;
+            /* margin-top: 30px; */
+            height: 60vh;
+            width: 100%;
+            
+            display: flex;
+            justify-content: center;
+        }
+    
+            .weight-input{
+                background-color: antiquewhite;
+                height: 100%;
+                width: 100vh;
+                font-family: sans-serif;
+                font-weight: bold;
+                border-radius: 10px;
+                
+    
+                display: flex;
+                position: relative;
+                flex-direction: column;
+    
+                align-items: center;
+                justify-content: space-evenly;
+            }
+    
+                    .record{
+                        padding: 7px 7px 7px 7px;
+                        font-size: 20px;
+                        color: rgb(82, 82, 82);
+                        background-color: rgb(255, 226, 188);
+                        background-size: 5vh;
+                        border-radius: 10px;
+    
+                        position: absolute;
+                        top: 4vh;
+                        left: 49vh;
+                    }
+    
+    
+                    .weight-input-container input{
+                        position: absolute;
+                        right: 17vh;
+                    }
+    
+                        .input-date{
+                            top:13.3vh;
+                        }
+    
+                        .input-time{
+                            top:25vh;
+                        }
+    
+                        .input-weight{
+                            top:37vh
+                        }
+    
+    
+                    .weight-input label{
+                        position: absolute;
+                        left: 26vh;
+                    }
+    
+                        .weight-input .date{
+                            height: 35px;
+                            width: 35px;
+                            background-image: url("../../../images/icon-calendar.png");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+    
+                            top: 14.5vh;
+                        }
+    
+                        .weight-input .time{
+                            height: 35px;
+                            width: 35px;
+                            background-image: url("../../../images/icon-time.png");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+    
+                            top: 26vh;
+                        }
+                        .weight-input .weight{
+                            height: 35px;
+                            width: 35px;
+                            background-image: url("../../../images/icon-weight.png");
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                            background-position: center;
+    
+                            top: 38vh;
+                        }
+    
+                    .weight-input input{
+                        height: 7vh;
+                        width: 50vh;
+                        border: 0;
+                        border-radius: 7px;
+                    }
+    
+    
+                    .weight-input .submit{
+                        height: 7vh;
+                        width: 20vh;
+                        border: 0;
+                        border-radius: 7px;
+    
+                        margin: 0;
+                        border: 0;
+                        background-color: rgb(255, 209, 124);
+                        font-family: sans-serif;
+                        font-weight: bold;
+                        font-size: 15px;
+    
+                        position: absolute;
+                        left: 45vh;
+                    }
+    
+                    .weight-input .submit:hover{
+                        opacity: 50%;
+                    }
+
+
+@media screen and (max-width:500px){
+    #root{
+        grid-template-columns: 1fr;
+        grid-template-rows: 55px 1fr 70px;
+        grid-template-areas: 
+        "header"
+        
+        "body"
+        "footer";
+    }
+    #body .float-content{
+        grid-template-rows: 50px 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "aside"
+        "main";
+    }
+    #root>#header{
+        width: 100%;
+        height: 55px;
+        
+    }
+    .aside-menu{
+        margin: 0;
+    }
+} 
