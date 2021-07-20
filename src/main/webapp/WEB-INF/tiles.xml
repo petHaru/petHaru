@@ -4,12 +4,19 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
        
 <tiles-definitions>
-  <definition name="management.weightRecord.test" template="/WEB-INF/view/inc/layout.jsp" >
+  <definition name="*.*.*" template="/WEB-INF/view/inc/layout.jsp" >
     <!-- <put-attribute name="title" value="뉴렉처 온라인" /> -->
 <!--     <put-attribute name="js" value="{3}.js" /> -->
     <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+    <put-attribute name="aside" value="/WEB-INF/view/{1}/inc/aside.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/{1}/{2}/{3}.jsp" />
+    <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+  </definition>
+  
+  <definition name="management.*.*" template="/WEB-INF/view/inc/layout.jsp" >
+    <put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
     <put-attribute name="aside" value="/WEB-INF/view/management/inc/aside.jsp" />
-    <put-attribute name="main" value="/WEB-INF/view/management/weightRecord/test.jsp" />
+    <put-attribute name="main" value="/WEB-INF/view/management/{1}/{2}.jsp" />
     <put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
   </definition>
 </tiles-definitions>

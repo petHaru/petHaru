@@ -12,4 +12,11 @@ public class WeightRecordController {
 		
 		return "management.weightRecord.test";
 	}
+	
+	@RequestMapping("petList")
+	public String petList() {
+		
+		return "management.weightRecord.petList";
+	}
+	
 }
