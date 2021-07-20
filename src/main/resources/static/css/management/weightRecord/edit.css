@@ -1,0 +1,210 @@
+@charset "UTF-8";
+/* ------------main-------------------- */
+#main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+}
+
+    .petphoto{
+        display: flex;
+        position: absolute;
+    }
+
+    .petphoto ol{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        margin: 0;
+
+        top: -25vh;
+        left: -43vh;
+
+    }
+
+    .petphoto li{
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    .petphoto li,
+    .petphoto a{
+        height: 80px;
+        width: 80px;
+        border-radius: 7px;
+    }
+
+    .petphoto a:hover,
+    .petphoto a.current{
+        opacity: 50%;
+    }
+
+
+    .pet1{
+        background-image: url("../../images/pet1.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .pet2{
+        background-image: url("../../images/pet2.png");
+        background-size: cover;
+    }
+
+    .pet3{
+        background-image: url("../../images/pet3.png");
+        background-size: cover;
+    }
+
+    .pet4{
+        background-image: url("../../images/pet4.jpg");
+        background-size: cover;
+    }
+
+
+
+    /* -------------------------------- */
+
+    .form{
+        border: none;
+        padding: 0;
+        /* margin-top: 30px; */
+        height: 60vh;
+        width: 100%;
+        
+        display: flex;
+        justify-content: center;
+    }
+
+        .weight-input{
+            background-color:antiquewhite;
+            height: 100%;
+            width: 100vh;
+            font-family: sans-serif;
+            font-weight: bold;
+            border-radius: 10px;
+            
+
+            display: flex;
+            position: relative;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+                .revise{
+                    padding: 7px 7px 7px 7px;
+                    font-size: 20px;
+                    color: rgb(82, 82, 82);
+                    background-color: rgb(255, 226, 188);
+                    background-size: 5vh;
+                    border-radius: 10px;
+
+                    position: absolute;
+                    top: 4vh;
+                    left: 49vh;
+                }
+
+
+                .weight-input-container input{
+                    position: absolute;
+                    right: 17vh;
+                }
+
+                    .input-date{
+                        top:13.3vh;
+                    }
+
+                    .input-time{
+                        top:25vh;
+                    }
+
+                    .input-weight{
+                        top:37vh
+                    }
+
+
+                .weight-input label{
+                    position: absolute;
+                    left: 26vh;
+                }
+
+                    .weight-input .date{
+                        height: 35px;
+                        width: 35px;
+                        background-image: url("../../../images/icon-calendar.png");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+
+                        top: 14.5vh;
+                    }
+
+                    .weight-input .time{
+                        height: 35px;
+                        width: 35px;
+                        background-image: url("../../../images/icon-time.png");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+
+                        top: 26vh;
+                    }
+                    .weight-input .weight{
+                        height: 35px;
+                        width: 35px;
+                        background-image: url("../../../images/icon-weight.png");
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+
+                        top: 38vh;
+                    }
+
+                .weight-input input{
+                    height: 7vh;
+                    width: 50vh;
+                    border: 0;
+                    border-radius: 7px;
+                }
+                
+                .weight-input .delete{
+                    height: 7vh;
+                    width: 50vh;
+                    border: 0;
+                    border-radius: 7px;
+                    
+                    text-align: center;
+                    line-height: 7vh;
+                }
+                
+                	.delete .link{
+                		display:block;
+                		weight:100%;
+                		height:100%;
+                	}
+
+                .weight-input .button{
+                    display: flex;
+                    width: 350px;
+                    justify-content: space-between;
+                    position: absolute;
+                    top: 49vh;
+                    right: 20vh;
+                }
+
+                    .weight-input .button .btn{
+                        width: 20vh;
+                        margin: 0;
+                        border: 0;
+                        background-color: rgb(255, 209, 124);
+                        font-family: sans-serif;
+                        font-weight: bold;
+                        font-size: 15px;
+                    }
+
+                    .weight-input .btn:hover{
+                        opacity: 50%;
+                    }

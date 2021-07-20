@@ -32,4 +32,9 @@ public class WeightRecordController {
 		return "management.weightRecord.weightList";
 	}
 	
+	@RequestMapping("edit")
+	public String edit() {
+		
+		return "management.weightRecord.edit";
+	}
 }
