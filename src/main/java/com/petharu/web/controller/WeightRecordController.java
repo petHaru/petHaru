@@ -37,4 +37,10 @@ public class WeightRecordController {
 		
 		return "management.weightRecord.edit";
 	}
+	
+	@RequestMapping("stats")
+	public String stats() {
+		
+		return "management.weightRecord.stats";
+	}
 }
