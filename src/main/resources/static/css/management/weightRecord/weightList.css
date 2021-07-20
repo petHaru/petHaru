@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* ------------main-------------------- */
+#main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:90%;
+    width:95%;
+}
+
+    .record{
+        border: none;
+        padding: 0;
+        height: 100%;
+        width: 80%;
+        background-color: antiquewhite;
+        border-radius: 10px;
+        border-collapse: collapse;
+        
+        display: flex;
+        position: relative;
+        
+    }
+        .record-title{
+            padding: 7px 7px 7px 7px;
+            font-size: 22px;
+            font-weight: bold;
+            color: rgb(82, 82, 82);
+            background-color: rgb(255, 226, 188);
+            background-size: 5vh;
+            border-radius: 10px;
+
+         	position: absolute;
+         	top: 5%;
+			left:39.5%;
+        }
+
+        .regbutton{
+            padding: 10px 35px;
+            border: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+            background-color: rgb(255, 209, 124);
+            border-radius: 10px;
+
+            position: absolute;
+			bottom: 10%;
+			left: 30%;
+            
+        }
+        
+        .statbutton{
+            padding: 10px 35px;
+            border: none;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 13px;
+            background-color: rgb(255, 209, 124);
+            border-radius: 10px;
+
+            position: absolute;
+            bottom: 10%;
+            right: 30%;
+        }        
+
+        .regbutton:hover,
+        .statbutton:hover{
+            opacity: 50%;
+        }
+
+        .record-table{
+            height: 60%;
+            width: 80%;
+            font-family: sans-serif;
+            font-weight: bold;
+            table-layout: fixed;
+            text-align: center;
+            
+            position:absolute;
+			left:10%;
+			top: 25%;
+        }
+
+            thead{
+            	width: 100%;
+				position: absolute;
+                top:-13%;
+            }
+            
+            	.tr{
+            		width:100%;
+            		display:flex;
+            		
+            		
+            	}
+              
+                thead .date{
+                    background-image: url("../../images/icon-calendar.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+
+                thead .time{
+                    background-image: url("../../images/icon-time.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+
+                thead .weight{
+                    background-image: url("../../images/icon-weight.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+
+
+            tbody{
+                position: absolute;
+                /* top: 18.5vh; */
+                left: 2%;
+                height: 90%;
+                width:100%;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+                tbody a:hover{
+                    color: rgb(177, 177, 177);
+                }
+            
+                .record-table td{
+                    width: 200px;
+                    height: 35px;
+                }
+            
+            .am{
+                color: rgb(126, 126, 255);
+            }
+            
+            .pm{
+                color: rgb(255, 121, 97);
+            }

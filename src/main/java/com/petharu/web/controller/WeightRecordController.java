@@ -25,4 +25,11 @@ public class WeightRecordController {
 		return "management.weightRecord.reg";
 	}
 	
+	
+	@RequestMapping("weightList")
+	public String weightList() {
+		
+		return "management.weightRecord.weightList";
+	}
+	
 }
