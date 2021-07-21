@@ -8,8 +8,8 @@
                     <div class="record">
                         <h1 class="record-title">${list[0].petname}의 체중기록</h1>
     
-                        <a href="form?petid=${param.petid}&petname=${list[0].petname}"><div class="regbutton">체중등록</div></a>
-                        <a href="stats.jsp"><div class="statbutton">통계보기</div></a>
+                        <a href="reg?petid=${param.petid}&petname=${list[0].petname}"><div class="regbutton">체중등록</div></a>
+                        <a href="stats"><div class="statbutton">통계보기</div></a>
                         <table class="record-table">
                             <thead>
                                 <tr class="tr">
