@@ -29,7 +29,7 @@
                             		<c:set var="minute" value="${fn:substring(time,3,5)}"/>
                             		<fmt:parseNumber var = "numhour" value="${hour}" pattern = "00" />
 	                            	<td>
-	                            		<a href="revise-form?petid=${param.petid}&id=${n.id}">${date}</a>
+	                            		<a href="edit?petid=${param.petid}&id=${n.id}">${date}</a>
 	                            	</td>
 	                            	<c:if test="${numhour>12}">
 	                            		<td class="pm">${numhour-12}:${minute} PM</td>

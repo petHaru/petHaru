@@ -7,12 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/management/weightRecord/")
 public class WeightRecordController {
 	
-	@RequestMapping("test")
-	public String test() {
-		
-		return "management.weightRecord.test";
-	}
-	
 	@RequestMapping("petList")
 	public String petList() {
 		
