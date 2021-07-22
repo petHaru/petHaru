@@ -14,9 +14,9 @@ public class ScheduleController {
 		return "management.schedule.calendar";
 	}
 	
-	@PostMapping("reg")
-	public String reg() {
-		
-	}
+//	@PostMapping("reg")
+//	public String reg() {
+//		
+//	}
 
 }
