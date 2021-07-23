@@ -10,7 +10,7 @@
         <div class="pet-list">
         <c:forEach var="n" items="${list}">
         		<div class="pet">
-                <a href="table?petid=${n.id}"><img class="img" src="../../images/${n.image}"></a>
+                <a href="weightList?petid=${n.id}"><img class="img" src="../../images/${n.image}"></a>
                 ${n.name}
             	</div>
         </c:forEach>
