@@ -11,21 +11,20 @@ import com.petharu.web.dao.WeightRecordDao;
 import com.petharu.web.entity.Pet;
 
 @Repository
-public class MyBatisPetDao implements WeightRecordDao,PetDao {
+public class MyBatisPetDao implements PetDao {
 
 	private SqlSession sqlSession;
-	private WeightRecordDao mapper;
 	private PetDao petMapper;
 	
 	@Autowired
 	public MyBatisPetDao(SqlSession sqlSession) {
 		this.sqlSession = sqlSession;
-		mapper = sqlSession.getMapper(WeightRecordDao.class);
+		petMapper = sqlSession.getMapper(PetDao.class);
 	}
 	
 	@Override
 	public List<Pet> getList(int memberId) {
-		return mapper.getList(memberId);
+		return petMapper.getList(memberId);
 	}
 
 	@Override
