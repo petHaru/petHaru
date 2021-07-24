@@ -1,0 +1,77 @@
+@charset "UTF-8";
+/* ------------main-------------------- */
+#main{
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .record{
+        border: none;
+        padding: 0;
+        height: 60vh;
+        width: 754.4px;
+        
+        display: flex;
+        position: relative;
+        justify-content: center;
+        
+    }
+
+        .record-table{
+            background-color: antiquewhite;
+            height: 452px;
+            width: 100vh;
+            font-family: sans-serif;
+            font-weight: bold;
+            border-radius: 10px;
+            border-collapse: collapse;
+            table-layout: fixed;
+            text-align: center;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+            .record-title{
+                padding: 7px 7px 7px 7px;
+                font-size: 20px;
+                color: rgb(82, 82, 82);
+                background-color: rgb(255, 226, 188);
+                background-size: 5vh;
+                border-radius: 10px;
+
+                position: absolute;
+                top: 2vh;
+                left: 42vh;
+            }
+
+            thead{
+                position: absolute;
+                top: 10vh;
+                left: 8.5vh;
+            }
+            tbody{
+                font-size: 17px;
+
+                position: absolute;
+                top: 15vh;
+                height: 280px;
+                overflow-x: hidden;
+                overflow-y: scroll;
+            }
+            
+                .record-table td{
+                    width: 200px;
+                    height: 37px;
+                }
+            
+            .down{
+                color: rgb(126, 126, 255);
+            }
+            
+            .up{
+                color: rgb(255, 121, 97);
+            }
