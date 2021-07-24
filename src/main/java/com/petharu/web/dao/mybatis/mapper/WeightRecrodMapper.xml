@@ -16,8 +16,21 @@
 		select * from Weight where petId=#{petId}
 	</select>
 	
+	<select id="getWeight" resultType="com.petharu.web.entity.Weight">
+		select * from Weight where id=#{id}
+	</select>
+	
 	<insert id="insert" parameterType="com.petharu.web.entity.Weight">
 		insert into Weight (petId, measureDate, measureTime, kg)
 		 VALUES (#{petId}, #{measureDate}, #{measureTime}, #{kg})
 	</insert>
+	
+	<update id="update">
+		update Weight
+		set measureDate=#{measureDate},
+			measureTime=#{measureTime},
+			kg=#{kg}
+		where id=#{id}
+	</update>
+	
 </mapper>

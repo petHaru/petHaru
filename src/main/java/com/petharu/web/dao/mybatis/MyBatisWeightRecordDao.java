@@ -38,9 +38,20 @@ public class MyBatisWeightRecordDao implements WeightRecordDao {
 	}
 
 	@Override
+	public Weight getWeight(int id) {
+		return mapper.getWeight(id);
+	}
+
+	@Override
 	public int insert(Weight weight) {
 		return mapper.insert(weight);
 	}
+
+	@Override
+	public int update(Weight weight) {
+		return mapper.update(weight);
+	}
+
 
 
 

@@ -9,5 +9,7 @@ public interface WeightRecordDao {
 	List<Pet> getList(int memberId);
 	Pet getPet(int petId);
 	List<Weight> getWeightList(int petId);
+	Weight getWeight(int id);
 	int insert(Weight weight);
+	int update(Weight weight);
 }

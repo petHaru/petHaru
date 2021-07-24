@@ -78,9 +78,33 @@ public class WeightRecordController {
 	
 	//edit조회
 	@RequestMapping("edit")
-	public String edit() {
+	public String edit(Model model,
+					@RequestParam(name="id") int id) {
+		
+		Weight weight = new Weight();
+		weight = service.getWeight(id);
+		
+		model.addAttribute("weight", weight);
 		
 		return "management.weightRecord.edit";
+	}
+	
+	@PostMapping("edit")
+	public String edit( int id,
+						int petId,
+						String date,
+						String time,
+						float kg) {
+		
+		Weight weight = new Weight();
+		weight.setId(id);
+		weight.setMeasureDate(date);
+		weight.setMeasureTime(time);
+		weight.setKg(kg);
+		
+		service.update(weight);
+		
+		return "redirect:weightList?petId="+petId;
 	}
 	
 	//stats조회

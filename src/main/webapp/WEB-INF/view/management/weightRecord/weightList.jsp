@@ -29,7 +29,7 @@
              	
                             	<tr>
                             		<td>
-                            			<a href="edit?petId=${param.petId}">${n.measureDate}</a>
+                            			<a href="edit?petId=${n.petId}&id=${n.id}">${n.measureDate}</a>
                             		</td>
                             		
                             		<!-- AM, PM 구분 -->
