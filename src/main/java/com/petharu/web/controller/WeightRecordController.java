@@ -1,12 +1,11 @@
 package com.petharu.web.controller;
 
-import java.sql.Time;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -103,6 +102,15 @@ public class WeightRecordController {
 		weight.setKg(kg);
 		
 		service.update(weight);
+		
+		return "redirect:weightList?petId="+petId;
+	}
+	
+	@GetMapping("del")
+	public String delete(@RequestParam(name="petId") int petId,
+						 @RequestParam(name="id") int id) {
+		
+		service.delete(id);
 		
 		return "redirect:weightList?petId="+petId;
 	}

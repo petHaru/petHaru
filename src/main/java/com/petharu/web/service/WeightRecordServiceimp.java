@@ -45,5 +45,10 @@ public class WeightRecordServiceimp implements WeightRecordService {
 		return dao.update(weight);
 	}
 
+	@Override
+	public int delete(int id) {
+		return dao.delete(id);
+	}
+
 
 }

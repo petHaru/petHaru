@@ -31,7 +31,7 @@
                             <div class="button">
                                 <input class="btn re" type="submit" value="수정">
                                 <div class="btn delete">
-                                	<a class="link" href="del?petid=${param.petid}&id=${param.id}" onclick="if(!confirm('삭제할겨?')) return false;">삭제</a>
+                                	<a class="link" href="del?petId=${param.petId}&id=${param.id}" onclick="if(!confirm('삭제할겨?')) return false;">삭제</a>
                                 </div>
                             </div>
                         </form>

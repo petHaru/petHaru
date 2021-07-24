@@ -13,5 +13,6 @@ public interface WeightRecordService {
 	Weight getWeight(int id);
 	int insert(Weight weight);
 	int update(Weight weight);
+	int delete(int id);
 
 }

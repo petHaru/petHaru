@@ -52,6 +52,11 @@ public class MyBatisWeightRecordDao implements WeightRecordDao {
 		return mapper.update(weight);
 	}
 
+	@Override
+	public int delete(int id) {
+		return mapper.delete(id);
+	}
+
 
 
 

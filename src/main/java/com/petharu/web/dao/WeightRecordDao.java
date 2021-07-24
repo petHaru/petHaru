@@ -12,4 +12,5 @@ public interface WeightRecordDao {
 	Weight getWeight(int id);
 	int insert(Weight weight);
 	int update(Weight weight);
+	int delete(int id);
 }
