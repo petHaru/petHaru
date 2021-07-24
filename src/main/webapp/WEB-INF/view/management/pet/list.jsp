@@ -24,7 +24,6 @@
 					<!--diary-content-->
 				</div>
 				<!--box-->
-
 			</div>
 			<!-- pet-list -->
 		</c:forEach>
