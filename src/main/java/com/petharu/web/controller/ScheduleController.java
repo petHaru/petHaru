@@ -16,7 +16,7 @@ public class ScheduleController {
 	
 	@PostMapping("reg")
 	public String reg() {
-		
+		return "";
 	}
 
 }
