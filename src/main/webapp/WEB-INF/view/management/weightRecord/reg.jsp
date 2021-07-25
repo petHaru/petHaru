@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <main id="main">
     <fieldset class="form">
-        <form class="weight-input" action="WeightReg" method="post">
+        <form class="weight-input" action="reg" method="post">
              <h1 class="d-none">펫 선택</h1>
 <!-- 	                            <div class="petphoto">
 	                                <ol>
@@ -33,12 +33,9 @@
              </div>
 
              <div>
-             	<input type="hidden" name="petid" value="${param.petid}">
-             	<input type="hidden" name="petname" value="${param.petname}">
-                 <input class="submit" type="submit" value="등록">
+             	<input type="hidden" name="petId" value="${param.petId}">
+                <input class="submit" type="submit" value="등록">
              </div>
-             
-            
          </form>
 
     </fieldset>

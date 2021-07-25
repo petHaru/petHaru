@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.petharu.web.dao.WeightRecordDao">
+	<select id="getList" resultType="com.petharu.web.entity.Pet">
+		select * from Pet where memberId=#{memberId}
+	</select>
+	
+	<select id="getPet" resultType="com.petharu.web.entity.Pet">
+		select * from Pet where id=#{petId}
+	</select>
+	
+	<select id="getWeightList" resultType="com.petharu.web.entity.Weight">
+		select * from Weight where petId=#{petId}
+	</select>
+	
+	<select id="getWeight" resultType="com.petharu.web.entity.Weight">
+		select * from Weight where id=#{id}
+	</select>
+	
+	<insert id="insert" parameterType="com.petharu.web.entity.Weight">
+		insert into Weight (petId, measureDate, measureTime, kg)
+		 VALUES (#{petId}, #{measureDate}, #{measureTime}, #{kg})
+	</insert>
+	
+	<update id="update">
+		update Weight
+		set measureDate=#{measureDate},
+			measureTime=#{measureTime},
+			kg=#{kg}
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from Weight where id=#{id}
+	</delete>
+	
+</mapper>

@@ -1,0 +1,145 @@
+@charset "UTF-8";
+.fas,
+.far{
+    line-height: 200%;
+    margin-right: 10px;
+}
+#content{
+    position: relative;
+    min-height: 700px;
+}
+.mypet-section{
+    min-height: 700px;
+}
+
+.container{
+    position: relative;
+    top: 10px;
+    height: 80%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content : center;
+    overflow-wrap: break-word;
+    }
+.pet-list{
+	display: flex;
+}
+    .subject{
+        height: 50px;
+        text-align: center;
+        width: 100%;
+    }
+    .subject h1{
+        color: orange;
+        font-size: 22px;
+        display: inline-block;
+        border-bottom: 4px solid;
+        padding-bottom: 10px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        
+      }
+
+    .box{
+        flex-direction: column;
+        margin: 1rem;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.08) 0px 12px 20px 0px;
+        border-radius: 4px;
+        background: white;
+        width: 17rem;
+        height: 22.5rem;
+
+    }
+    .inner-section .img-box img:hover {
+        transform: scale(1.15);
+        transition: .4s ease;
+
+    }
+    .box .img-box {
+        width: 100%;
+        position: relative;
+        padding-top:92%;
+        overflow: hidden;
+    }
+    
+    .img-box img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        display: block;
+
+        transform: scale(1);
+        transition: .3s;
+    }
+    
+    .user {
+        padding: 4px 10px;
+        border-top: 1px solid rgb(248, 249, 250);
+        font-size: 0.75rem;
+        line-height: 1.5;
+        justify-content: space-between;
+    }
+    .user .userinfo {
+        text-decoration: none;
+        color: inherit;
+        align-items: center;
+    }
+    .user .userinfo img {
+        object-fit: cover;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+        margin-right: 0.5rem;
+    }
+    .diary-content h4{
+        text-align: center;
+        margin: 17px 1px;
+    }
+    .diary-content .detail-btn{
+        cursor: pointer;
+        margin-left: 25%;
+    }
+    .button {
+        display: inline-block;
+    
+        border: 2px solid orange;
+        border-radius: 10px;
+        color: orange;
+        padding: 5px 30px;
+        text-decoration: none;
+        transition: 200ms ease-in-out;
+        background-color: white;
+    
+      }
+    
+      .button:hover, .button:focus{
+        background-color: orange;
+        color: white;
+      }
+      .big{
+        padding: 10px 50px;
+        margin-top: 28px;
+        cursor: pointer;
+      }
+    .add{
+        display: block;
+        position: relative;
+        left: 38%;
+    } 
+.none-list img{
+  width: 300px;
+}
+.none-list p{
+  color: gray;
+  font-size: 15px;
+      text-align: center;
+    font-weight: bold;
+}
+.necessary{
+    color: red;
+
+}
