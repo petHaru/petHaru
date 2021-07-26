@@ -61,13 +61,13 @@
 						<div class="hashtag-container">
 
 							<input class="hashtag hashtag1" id="hashtag1" type="radio"
-								name="scheduleType" value="진료"> <label for="hashtag1">#진료</label>
+								name="scheduleTypeId" value=1> <label for="hashtag1">#진료</label>
 							<input class="hashtag hashtag2" id="hashtag2" type="radio"
-								name="scheduleType" value="접종"> <label for="hashtag2">#예방접종</label>
+								name="scheduleTypeId" value=2> <label for="hashtag2">#예방접종</label>
 							<input class="hashtag hashtag3" id="hashtag3" type="radio"
-								name="scheduleType" value="미용"> <label for="hashtag3">#미용</label>
+								name="scheduleTypeId" value=3> <label for="hashtag3">#미용</label>
 							<input class="hashtag hashtag4" id="hashtag4" type="radio"
-								name="scheduleType" value="기타"> <label for="hashtag4">#기타</label>
+								name="scheduleTypeId" value=4> <label for="hashtag4">#기타</label>
 
 						</div>
 
