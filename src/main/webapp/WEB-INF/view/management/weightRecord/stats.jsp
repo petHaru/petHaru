@@ -14,7 +14,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+<!--                                 <tr>
                                     <td>2021-01-02</td>
                                     <td>4.93 KG</td>
                                     <td class="down">▼0.30 KG</td>
@@ -78,7 +78,7 @@
                                     <td>2021-03-27</td>
                                     <td>5.09 KG</td>
                                     <td class="down">▼0.30 KG</td>
-                                </tr>
+                                </tr> -->
     
                             </tbody>
                         </table>
