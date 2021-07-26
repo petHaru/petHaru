@@ -5,8 +5,8 @@
 
 <mapper namespace="com.petharu.web.dao.PetDao">
 	<select id="getList" resultType="com.petharu.web.entity.Pet">
-		select * from Pet where
-		memberId=#{memberId}
+	SELECT P.*,B.NAME ,FLOOR((CAST(REPLACE(CURRENT_DATE,'-','') AS UNSIGNED) - CAST('19931232' AS UNSIGNED)) / 10000) + 2 as age
+	FROM Pet P LEFT JOIN Breed B ON B.ID = P.breedId WHERE P.memberId = #{memberId} ORDER BY P.ID
 	</select>
 
 	<insert id="insert"
