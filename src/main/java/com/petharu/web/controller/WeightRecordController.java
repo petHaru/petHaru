@@ -88,6 +88,7 @@ public class WeightRecordController {
 		return "management.weightRecord.edit";
 	}
 	
+	//체중기록 수정
 	@PostMapping("edit")
 	public String edit( int id,
 						int petId,
@@ -106,6 +107,7 @@ public class WeightRecordController {
 		return "redirect:weightList?petId="+petId;
 	}
 	
+	//체중기록 삭제
 	@GetMapping("del")
 	public String delete(@RequestParam(name="petId") int petId,
 						 @RequestParam(name="id") int id) {
