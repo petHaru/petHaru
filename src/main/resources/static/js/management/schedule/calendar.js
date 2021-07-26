@@ -251,13 +251,34 @@ function detailBind(scheduleId) {
                                 </span>
                                 
                             </div>
-                            <div class="detail-hashtag-content">
-                                <div class="detail-hashtag">
-                                    # ${schedule.s.scheduleTypeId}
-                                </div>
-                                <div class="detail-content">
-                                    ${time} ${schedule.s.content}
-                                </div>
+                            <div class="detail-hashtag-content">`;
+       
+       	switch(schedule.s.scheduleTypeId){
+			case 1: 
+				div += `<div class="detail-hashtag detail-hashtag-diagnosis">
+                           #진료
+                        </div>`;
+                        break;
+            case 2: 
+				div += `<div class="detail-hashtag detail-hashtag-vaccination">
+                           #접종
+                        </div>`;
+                        break;
+          	case 3: 
+				div += `<div class="detail-hashtag detail-hashtag-grooming">
+                           #미용
+                        </div>`;
+                        break;
+         	case 4: 
+				div += `<div class="detail-hashtag detail-hashtag-other">
+                           #기타
+                        </div>`;   
+                        break; 			
+		}
+		
+		div += `<div class="detail-content">
+                	${time} ${schedule.s.content}
+                </div>
                             </div>
                             <div class="detail-buttons">                              
 								<a href="edit?id=${scheduleId}">수정 | </a>
@@ -265,7 +286,7 @@ function detailBind(scheduleId) {
                                 <a href="del?id=${scheduleId}" onclick="if(!confirm('삭제하시겠습니까?'))return false;"> 삭제</a>                 		
                             </div>`
 
-	scheduleDetail.insertAdjacentHTML("beforeend", div);
+		scheduleDetail.insertAdjacentHTML("beforeend", div);
 	})
 	/*
 	request.onload = function(e) {
