@@ -281,7 +281,7 @@ function detailBind(scheduleId) {
                 </div>
                             </div>
                             <div class="detail-buttons">                              
-								<a href="edit?id=${scheduleId}">수정 | </a>
+								<div class="btn-edit" onclick="editBtnClick()">수정 | </div>
                    
                                 <a href="del?id=${scheduleId}" onclick="if(!confirm('삭제하시겠습니까?'))return false;"> 삭제</a>                 		
                             </div>`

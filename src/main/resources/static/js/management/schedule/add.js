@@ -1,4 +1,5 @@
 
+//reg popup
 window.addEventListener("load",function(){
     var section = document.querySelector("#content-wrap");
     var addBtn = section.querySelector(".btn-add");
@@ -10,10 +11,21 @@ window.addEventListener("load",function(){
             overlay.classList.remove("d-none");
             popup.classList.remove("d-none");
         }  
-    }
-
-    
+    }   
 });
+
+//edit popup
+
+function editBtnClick(){
+		let overlay= document.querySelector(".overlay2");
+		let editPopup = document.querySelector(".popup-wrapper2");
+		if(overlay.classList.contains("d-none")&&editPopup.classList.contains("d-none")){
+            overlay.classList.remove("d-none");
+            editPopup.classList.remove("d-none");
+            }
+   
+}
+
 
 window.addEventListener("load",function(){
     var popup = document.querySelector(".popup-wrapper");
