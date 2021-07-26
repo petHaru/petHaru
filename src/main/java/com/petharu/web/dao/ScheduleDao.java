@@ -9,4 +9,6 @@ public interface ScheduleDao {
 	int update(Schedule schedule);
 	int delete(int id);
 	List<Schedule> getList(String month, int memberId);
+	
+	Schedule get(int id);
 }

@@ -5,44 +5,48 @@ window.addEventListener("load", function() {
 });
 
 function getSchedule() {
-
-	var request = new XMLHttpRequest();
-	request.onload = function(e) {
-		var list = JSON.parse(request.responseText);
-		//console.log(request.responseText);
-		console.log(list);
-		for (var i = 0; i < list.length; i++) {
-			var day = list[i].dateTime;
+	
+	let month = document.querySelector(".current-year-month");
+	month = month.innerText;
+	month = month.substring(5, month.length);
+	//month = Number(month);
+	
+	month=month.padStart(2, '0');
+	console.log("month:" + month);
+	let memberId = 2;
+	
+	fetch(`/api/schedule/list?m=${month}&mi=${memberId}`)
+	.then(response=>{
+		return response.json();
+	})
+	.then(json=>{
+		console.log(json);
+		let list = json.list;
+		let div="";
+		for (let i = 0; i < list.length; i++) {
+			let day = list[i].dateTime;
 			day = parseInt(day.substring(8, 10));
 			//console.log(day);
-			var td = document.getElementById(day);
+			let td = document.getElementById(day);
 
-			switch (list[i].scheduleTypeName) {
-				case "진료":
-					var div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#F5A9A9">${list[i].title}</div>`
+			switch (list[i].scheduleTypeId) {
+				case 1:
+					div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#F5A9A9">${list[i].title}</div>`
 					break;
-				case "접종":
-					var div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#58ACFA">${list[i].title}</div>`
+				case 2:
+					div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#58ACFA">${list[i].title}</div>`
 					break;
-				case "미용":
-					var div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#C0CA33">${list[i].title}</div>`
+				case 3:
+					div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#C0CA33">${list[i].title}</div>`
 					break;
-				case "기타":
-					var div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#9fa6ad">${list[i].title}</div>`
+				case 4:
+					div = `<div class="id d-none">${list[i].id}</div><div class="schedule" style="background-color:#9fa6ad">${list[i].title}</div>`
 					break;
 			}
 			td.insertAdjacentHTML("beforeend", div);
 		}
-	}
-	//parameter로 month줘야함 user_id도...
-	let month = document.querySelector(".current-year-month");
-	month = month.innerText;
-	month = month.substring(5, month.length);
-	month = Number(month);
-	console.log("month:" + month);
-	let memberId = 1;
-	request.open("GET", `../api/schedule/list?m=${month}&member=${memberId}`, true); //false면 동기, true면 비동기
-	request.send(null);
+	})
+	
 }
 
 function makeCalendar() {
@@ -224,6 +228,46 @@ function detailSchedule() {
 function detailBind(scheduleId) {
 	let request = new XMLHttpRequest();
 	let scheduleDetail = document.querySelector(".schedule-detail");
+	fetch(`/api/schedule/${scheduleId}`)
+	.then(response=>{
+		return response.json();
+	})
+	.then(json=>{
+		let schedule = {s:json};
+		console.log(schedule);
+		//console.log(json);
+		
+		scheduleDetail.innerHTML="";
+		//스케줄 get해서 그거 안에있는거 html 적어서 넣기
+		//let schedule = JSON.parse(request.responseText);
+		let dateTime = schedule.s.dateTime;
+		let day = parseInt(dateTime.substring(8, 10));
+		let time = dateTime.substring(11);
+		
+		
+		let div = `<div class="detail-date-day">
+                                <span class="detail-date">
+                                    ${day}
+                                </span>
+                                
+                            </div>
+                            <div class="detail-hashtag-content">
+                                <div class="detail-hashtag">
+                                    # ${schedule.s.scheduleTypeId}
+                                </div>
+                                <div class="detail-content">
+                                    ${time} ${schedule.s.content}
+                                </div>
+                            </div>
+                            <div class="detail-buttons">                              
+								<a href="edit?id=${scheduleId}">수정 | </a>
+                   
+                                <a href="del?id=${scheduleId}" onclick="if(!confirm('삭제하시겠습니까?'))return false;"> 삭제</a>                 		
+                            </div>`
+
+	scheduleDetail.insertAdjacentHTML("beforeend", div);
+	})
+	/*
 	request.onload = function(e) {
 		scheduleDetail.innerHTML="";
 		//스케줄 get해서 그거 안에있는거 html 적어서 넣기
@@ -258,5 +302,5 @@ function detailBind(scheduleId) {
 	//parameter로 month줘야함 user_id도...
 	
 	request.open("GET", `/pet-manager/schedule/detail?id=${scheduleId}`, true); //false면 동기, true면 비동기
-	request.send(null);
+	request.send(null);*/
 }

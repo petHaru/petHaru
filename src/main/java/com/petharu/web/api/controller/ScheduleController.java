@@ -6,6 +6,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,8 +24,8 @@ public class ScheduleController {
 	
 	@RequestMapping("list")
 	public Map<String, Object> list(
-			@RequestParam(name = "month") String month,
-			@RequestParam(name = "memberId") int memberId,
+			@RequestParam(name = "m") String month,
+			@RequestParam(name = "mi") int memberId,
 			Model model) {
 
 		Map<String, Object> map = new HashMap<>();
@@ -33,5 +35,13 @@ public class ScheduleController {
 		map.put("list", list);
 		
 		return map;
+	}
+	
+	/*https://github.com/newlecture/newlecture-react-app/blob/master/src/components/customer/notice/List.js
+	 * 뉴렉쌤 코드 보면서 fetch공부하기..*/
+	
+	@GetMapping("{id}")
+	public Schedule get(@PathVariable("id") int id) {	
+		return service.get(id);
 	}
 }

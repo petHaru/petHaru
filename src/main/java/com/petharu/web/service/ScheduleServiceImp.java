@@ -37,5 +37,10 @@ public class ScheduleServiceImp implements ScheduleService {
 		// TODO Auto-generated method stub
 		return dao.getList(month,memberId );
 	}
-
+	
+	@Override
+	public Schedule get(int id) {
+		// TODO Auto-generated method stub
+		return dao.get(id);
+	}
 }

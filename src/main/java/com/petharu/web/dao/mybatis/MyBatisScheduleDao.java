@@ -45,4 +45,9 @@ public class MyBatisScheduleDao implements ScheduleDao {
 		return scheduleMapper.getList(month,memberId);
 	}
 
+	public Schedule get(int id) {
+		// TODO Auto-generated method stub
+		return scheduleMapper.get(id);
+	}
+
 }

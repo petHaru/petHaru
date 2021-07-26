@@ -11,4 +11,6 @@ public interface ScheduleService {
 	int insert(Schedule schedule);
 	int update(Schedule schedule);
 	int delete(int id);
+
+	Schedule get(int id);
 }
