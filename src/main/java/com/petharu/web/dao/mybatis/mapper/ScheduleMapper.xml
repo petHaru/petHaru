@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.petharu.web.dao.ScheduleDao">
+
+ <select id="getList" resultType="com.petharu.web.entity.Schedule">
+        select * from Schedule 
+       	<where>        	
+        <if test="month != null">
+        	dateTime regexp '[0-9]{4}-${month}-[0-9]{2}T[0-9]{2}:[0-9]{2}'    
+        </if>        
+        	and (memberId = #{memberId})    
+        </where> 
+    </select>
+    
+    <select id="get" resultType="com.petharu.web.entity.Schedule">
+        select * from Schedule 
+       	where
+       	id = #{id}
+    </select>
+    
+    
+	<insert id="insert"
+		parameterType="com.petharu.web.entity.Schedule" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into
+		Schedule(title,content,dateTime,memberId,scheduleTypeId)
+		values(#{title},#{content},#{dateTime},#{memberId},#{scheduleTypeId})
+	</insert>
+
+	<delete id="delete" parameterType="int">
+		delete from Schedule where
+		id=#{id}
+	</delete>
+
+	<update id="update"
+		parameterType="com.petharu.web.entity.Schedule">
+		update Schedule
+		<set>
+			<if test="title != null">title = #{title},</if>
+			<if test="content != null">content = #{content},</if>
+			<if test="dateTime != null">dateTime = #{dateTime},</if>
+			<if test="memberId != null">memberId = #{memberId},</if>
+			<if test="ScheduleTypeId != null">ScheduleTypeId = #{ScheduleTypeId}</if>
+		</set>
+		where id=#{id}
+	</update>
+</mapper>
