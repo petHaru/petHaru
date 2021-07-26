@@ -9,6 +9,8 @@ public class Pet {
 	private String personality;
 	private int memberId;
 	private int breedId;
+	private String birthday;
+	private String breed;
 	
 	public Pet() {
 	}
@@ -76,12 +78,36 @@ public class Pet {
 	public void setBreedId(int breedId) {
 		this.breedId = breedId;
 	}
+	
+	
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+	
+	
+
+	public String getBreed() {
+		return breed;
+	}
+
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
 
 	@Override
 	public String toString() {
 		return "Pet [id=" + id + ", name=" + name + ", gender=" + gender + ", age=" + age + ", image=" + image
-				+ ", personality=" + personality + ", memberId=" + memberId + ", breedId=" + breedId + "]";
+				+ ", personality=" + personality + ", memberId=" + memberId + ", breedId=" + breedId + ", birthday="
+				+ birthday + ", breed=" + breed + "]";
 	}
+
+	
+
 	
 	
 }
