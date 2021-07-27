@@ -9,7 +9,7 @@
                         <h1 class="record-title">${pet.name}의 체중기록</h1>
     
                         <a href="reg?petId=${pet.id}"><div class="regbutton">체중등록</div></a>
-                        <a href="stats"><div class="statbutton">통계보기</div></a>
+                        <a href="stats?petId=${pet.id}"><div class="statbutton">통계보기</div></a>
                         <table class="record-table">
                             <thead>
                                 <tr class="tr">

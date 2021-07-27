@@ -13,7 +13,7 @@
 	</select>
 	
 	<select id="getWeightList" resultType="com.petharu.web.entity.Weight">
-		select * from Weight where petId=#{petId}
+		select * from Weight where petId=#{petId} order by measureDate
 	</select>
 	
 	<select id="getWeight" resultType="com.petharu.web.entity.Weight">

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
                 <main id="main">
                     <div class="record">
                         
@@ -14,12 +15,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-<!--                                 <tr>
-                                    <td>2021-01-02</td>
+                            <c:forEach var="n" items="${weightList}">
+                                <tr>
+                                    <td>${n.measureDate}</td>
                                     <td>4.93 KG</td>
                                     <td class="down">▼0.30 KG</td>
                                 </tr>
-                                <tr>
+                            </c:forEach>
+                            <!--     <tr>
                                     <td>2021-01-09</td>
                                     <td>5.02 KG</td>
                                     <td class="up">▲0.30 KG</td>
