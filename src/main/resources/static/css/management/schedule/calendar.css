@@ -428,7 +428,7 @@ ul,ol{
     --display:none;
   }
 
-.popup-wrapper{
+.common-popup-wrapper{
     position:absolute;
     top:25%;
     left:40%;
@@ -441,7 +441,7 @@ ul,ol{
     --transform:translate(-50%,-50%) scale(0);
 }
 
-.popup-wrapper>.add-schedule{
+.common-popup-wrapper>.add-schedule{
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
     border-radius: 3px;
     background-color: white;

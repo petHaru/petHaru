@@ -30,10 +30,10 @@
 			</thead>
 		</table>
 		<div class="overlay d-none"></div>
-		<div class="popup-wrapper d-none">
+		<div class="common-popup-wrapper popup-wrapper1 d-none">
 			<div class="add-schedule">
 				<div class="close-btn">
-					<img src="../../images/icon-close-btn.png" alt="">
+					<img src="../../images/icon-close-btn.png" onclick="closePopup(1)" alt="">
 
 				</div>
 				<div class="add-schedule-form">
@@ -82,17 +82,16 @@
 			</div>
 		</div>
 
-		<div class="overlay2 d-none"></div>
-		<div class="popup-wrapper2 d-none">
+		<div class="common-popup-wrapper popup-wrapper2 d-none">
 			<div class="add-schedule">
 				<div class="close-btn">
-					<img src="../../images/icon-close-btn.png" alt="">
+					<img src="../../images/icon-close-btn.png" onclick="closePopup(2)" alt="">
 
 				</div>
 				<div class="add-schedule-form">
 
-					<h1 class="d-none">일정추가</h1>
-					<form action="reg" method="post">
+					<h1 class="d-none">일정수정</h1>
+					<form action="edit" method="post">
 						<div class="schedule-input-container title-container">
 							<label class="schedule-lable title-lable d-none" for="">제목</label>
 							<input class="title-input" type="text" placeholder="제목"
@@ -101,7 +100,7 @@
 						<div class="schedule-input-container date-time-container">
 							<label class="schedule-lable  date-time-lable btn" for="">일시</label>
 
-							<input type="datetime-local" name="datetime">
+							<input class="dateTime-input" type="datetime-local" name="datetime">
 
 						</div>
 						<div class="schedule-input-container content-container">
@@ -114,13 +113,13 @@
 						<div class="hashtag-container">
 
 							<input class="hashtag hashtag1" id="hashtag1" type="radio"
-								name="scheduleType" value="진료"> <label for="hashtag1">#진료</label>
+								name="scheduleType" value=1> <label for="hashtag1">#진료</label>
 							<input class="hashtag hashtag2" id="hashtag2" type="radio"
-								name="scheduleType" value="접종"> <label for="hashtag2">#예방접종</label>
+								name="scheduleType" value=2> <label for="hashtag2">#예방접종</label>
 							<input class="hashtag hashtag3" id="hashtag3" type="radio"
-								name="scheduleType" value="미용"> <label for="hashtag3">#미용</label>
+								name="scheduleType" value=3> <label for="hashtag3">#미용</label>
 							<input class="hashtag hashtag4" id="hashtag4" type="radio"
-								name="scheduleType" value="기타"> <label for="hashtag4">#기타</label>
+								name="scheduleType" value=4> <label for="hashtag4">#기타</label>
 
 						</div>
 
