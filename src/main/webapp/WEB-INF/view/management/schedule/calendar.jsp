@@ -68,8 +68,10 @@
 								name="scheduleTypeId" value=3> <label for="hashtag3">#미용</label>
 							<input class="hashtag hashtag4" id="hashtag4" type="radio"
 								name="scheduleTypeId" value=4> <label for="hashtag4">#기타</label>
+							<input class="hidden-input" type="hidden" name="id" value="1">
 
 						</div>
+						
 
 
 						<div class="submit">

@@ -43,7 +43,7 @@
 			<if test="content != null">content = #{content},</if>
 			<if test="dateTime != null">dateTime = #{dateTime},</if>
 			<if test="memberId != null">memberId = #{memberId},</if>
-			<if test="ScheduleTypeId != null">ScheduleTypeId = #{ScheduleTypeId}</if>
+			<if test="scheduleTypeId != null">scheduleTypeId = #{scheduleTypeId}</if>
 		</set>
 		where id=#{id}
 	</update>

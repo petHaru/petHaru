@@ -26,10 +26,22 @@ function editBtnClick(scheduleId) {
 		let titleInput = editPopup.querySelector(".title-input"); //document에서 가져오니까 안됨..아마 비동기라서 그러는듯..?ㅠ
 		let dateTimeInput = editPopup.querySelector(".dateTime-input");
 		let contentInput = editPopup.querySelector(".content-input");
+		let form = editPopup.querySelector("form");
+	
+		
 		let hashtag1 = editPopup.querySelector(".hashtag1");
 		let hashtag2 = editPopup.querySelector(".hashtag2");
 		let hashtag3 = editPopup.querySelector(".hashtag3");
 		let hashtag4 = editPopup.querySelector(".hashtag4");
+		
+		let hiddenInput = document.createElement("input");
+		
+		hiddenInput.setAttribute("type", "hidden");
+
+		hiddenInput.setAttribute("name", "id");	
+		hiddenInput.setAttribute("value", scheduleId);
+		form.appendChild(hiddenInput);
+		
 		fetch(`/api/schedule/${scheduleId}`)
 		.then(response=>{
 			return response.json();
