@@ -21,7 +21,7 @@
                            <%--  <c:forEach var="n" items="${weightStats}" varStatus="s"> --%>
                             <c:forEach var="n" begin="0" end="${size-1}">
                                 <tr>
-                                <td><c:out value="${weightStats[n].week} 주" /></td>
+                                <td><c:out value="${n+1} 주" /></td>
                                 <td><c:out value="${weightStats[n].avg} KG" /></td>    
                                 <c:if test="${n==0}">
                                 	<td>-</td>
