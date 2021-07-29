@@ -1,17 +1,20 @@
 package com.petharu.web.entity;
 
 public class Schedule {
-	private int id;
-	private int memberId;
+	private Integer id;
+	private Integer memberId;
 	private String title;
 	private String content;
-	private int scheduleTypeId;
+	private Integer scheduleTypeId;
 	private String dateTime;
 	
 	public Schedule() {	
 	}
+	
+	
 
-	public Schedule(int id, int memberId, String title, String content, String scheduleTypeName, String dateTime) {
+	public Schedule(Integer id, Integer memberId, String title, String content, Integer scheduleTypeId,
+			String dateTime) {
 		super();
 		this.id = id;
 		this.memberId = memberId;
@@ -21,19 +24,21 @@ public class Schedule {
 		this.dateTime = dateTime;
 	}
 
-	public int getId() {
+
+
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getMemberId() {
+	public Integer getMemberId() {
 		return memberId;
 	}
 
-	public void setMemberId(int memberId) {
+	public void setMemberId(Integer memberId) {
 		this.memberId = memberId;
 	}
 
@@ -53,13 +58,11 @@ public class Schedule {
 		this.content = content;
 	}
 
-	
-
-	public int getScheduleTypeId() {
+	public Integer getScheduleTypeId() {
 		return scheduleTypeId;
 	}
 
-	public void setScheduleTypeId(int scheduleTypeId) {
+	public void setScheduleTypeId(Integer scheduleTypeId) {
 		this.scheduleTypeId = scheduleTypeId;
 	}
 
@@ -76,11 +79,8 @@ public class Schedule {
 		return "Schedule [id=" + id + ", memberId=" + memberId + ", title=" + title + ", content=" + content
 				+ ", scheduleTypeId=" + scheduleTypeId + ", dateTime=" + dateTime + "]";
 	}
-	
-	
 
 	
-
 	
 
 }

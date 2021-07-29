@@ -42,6 +42,14 @@ public class ScheduleController {
 		
 		return "redirect:calendar";
 	}
+	
+	@PostMapping("edit")
+	public String edit(Schedule schedule) {
+		System.out.println("update schedule");
+		service.update(schedule);
+		return "redirect:calendar";
+		
+	}
 
 
 }
