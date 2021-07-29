@@ -1,5 +1,10 @@
 package com.petharu.web.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.petharu.web.dto.WeightStats;
 import com.petharu.web.entity.Pet;
 import com.petharu.web.entity.Weight;
 import com.petharu.web.service.WeightRecordService;
@@ -39,10 +45,10 @@ public class WeightRecordController {
 		Pet pet = service.getPet(petId);
 		
 		//펫 Weight관련 정보
-		List<Weight> weight = service.getWeightList(petId);
+		List<Weight> weightList = service.getWeightList(petId);
 		
 		model.addAttribute("pet", pet);
-		model.addAttribute("weightList", weight);
+		model.addAttribute("weightList", weightList);
 		
 		return "management.weightRecord.weightList";
 	}
@@ -119,7 +125,13 @@ public class WeightRecordController {
 	
 	//stats조회
 	@RequestMapping("stats")
-	public String stats() {
+	public String stats(Model model,
+						@RequestParam(name="petId") int petId) {
+		
+		//주차별 평균
+		List<WeightStats> weightStats = service.getWeekAvg(petId);
+		
+		model.addAttribute("weightStats", weightStats);
 		
 		return "management.weightRecord.stats";
 	}

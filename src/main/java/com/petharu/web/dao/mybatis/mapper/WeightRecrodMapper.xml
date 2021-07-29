@@ -16,6 +16,32 @@
 		select * from Weight where petId=#{petId} order by measureDate
 	</select>
 	
+	<select id="getStatsList" resultType="com.petharu.web.dto.WeightStats">
+		select a.measureDate, a.week, b.avg from 
+		(
+		SELECT measureDate, week(measureDate) as week
+		FROM Weight 
+		where petId=#{petId}
+		) as a
+		inner join (
+		SELECT week(measureDate) as week, round(avg(kg),2) as avg
+		FROM Weight 
+		where petId=#{petId}
+		group by week
+		) as b
+		on a.week = b.week
+		order by measureDate;
+	</select>
+	
+	<select id="getWeekAvg" resultType="com.petharu.web.dto.WeightStats">
+		SELECT week(measureDate) as week, round(avg(kg),2) as avg
+		FROM Weight 
+		where petId=#{petId}
+		group by week
+	</select>
+	
+	
+	
 	<select id="getWeight" resultType="com.petharu.web.entity.Weight">
 		select * from Weight where id=#{id}
 	</select>

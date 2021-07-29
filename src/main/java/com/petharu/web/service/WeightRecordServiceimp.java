@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.petharu.web.dao.WeightRecordDao;
+import com.petharu.web.dto.WeightStats;
 import com.petharu.web.entity.Pet;
 import com.petharu.web.entity.Weight;
 
@@ -31,6 +32,16 @@ public class WeightRecordServiceimp implements WeightRecordService {
 	}
 	
 	@Override
+	public List<WeightStats> getWeightStats(int petId) {
+		return dao.getWeightStats(petId);
+	}
+	
+	@Override
+	public List<WeightStats> getWeekAvg(int petId) {
+		return dao.getWeekAvg(petId);
+	}
+	
+	@Override
 	public Weight getWeight(int id) {
 		return dao.getWeight(id);
 	}
@@ -49,6 +60,8 @@ public class WeightRecordServiceimp implements WeightRecordService {
 	public int delete(int id) {
 		return dao.delete(id);
 	}
+
+
 
 
 }
