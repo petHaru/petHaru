@@ -135,4 +135,10 @@ public class WeightRecordController {
 		
 		return "management.weightRecord.stats";
 	}
+	
+	@RequestMapping("chart")
+	public String chart() {
+		
+		return "management.weightRecord.chart";
+	}
 }

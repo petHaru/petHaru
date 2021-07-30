@@ -21,23 +21,29 @@
                            <%--  <c:forEach var="n" items="${weightStats}" varStatus="s"> --%>
                             <c:forEach var="n" begin="0" end="${size-1}">
                                 <tr>
-                                <td><c:out value="${n+1} 주" /></td>
-                                <td><c:out value="${weightStats[n].avg} KG" /></td>    
-                                <c:if test="${n==0}">
-                                	<td>-</td>
-                                </c:if>
-                                <c:if test="${n>0}">
-									<c:if test="${weightStats[n].avg > weightStats[n-1].avg}">
-										<c:set var="minus" value="${weightStats[n].avg - weightStats[n-1].avg}" />
-										<fmt:formatNumber var ="dif" value="${minus}" pattern = "0.00" />
-										<td class="up">▲ ${dif} KG</td>
-									</c:if>
-									<c:if test="${weightStats[n].avg < weightStats[n-1].avg}">
-										<c:set var="minus" value="${weightStats[n-1].avg - weightStats[n].avg}"/>
-										<fmt:formatNumber var ="dif" value="${minus}" pattern = "0.00" />
-										<td class="down">▼ ${dif} KG</td>
-									</c:if>
-                                </c:if>                                    
+	                                <!-- 주차 -->
+                                	<c:set var="basicWeek" value="${weightStats[0].week}" />
+	                                <td><c:out value="${weightStats[n].week-basicWeek} 주" /></td>                               
+	                                
+	                                <!-- 평균 -->
+	                                <td><c:out value="${weightStats[n].avg} KG" /></td>    
+	                                
+	                                <!-- 전주대비 -->
+	                                <c:if test="${n==0}">
+	                                	<td>-</td>
+	                                </c:if>
+	                                <c:if test="${n>0}">
+										<c:if test="${weightStats[n].avg > weightStats[n-1].avg}">
+											<c:set var="minus" value="${weightStats[n].avg - weightStats[n-1].avg}" />
+											<fmt:formatNumber var ="dif" value="${minus}" pattern = "0.00" />
+											<td class="up">▲ ${dif} KG</td>
+										</c:if>
+										<c:if test="${weightStats[n].avg < weightStats[n-1].avg}">
+											<c:set var="minus" value="${weightStats[n-1].avg - weightStats[n].avg}"/>
+											<fmt:formatNumber var ="dif" value="${minus}" pattern = "0.00" />
+											<td class="down">▼ ${dif} KG</td>
+										</c:if>
+	                                </c:if>                                    
                                 </tr>
                             </c:forEach>
                             <!--     <tr>
