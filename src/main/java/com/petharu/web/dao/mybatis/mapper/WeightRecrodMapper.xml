@@ -16,6 +16,12 @@
 		select * from Weight where petId=#{petId} order by measureDate
 	</select>
 	
+	<select id="getWeekWeightList" resultType="com.petharu.web.dto.WeightWithWeek">
+		SELECT *, week(measureDate) as week 
+		from Weight where petId=#{petId} <if test="week != null">and week(measureDate) = #{week}</if>
+		order by measureDate
+	</select>
+	
 	<select id="getStatsList" resultType="com.petharu.web.dto.WeightStats">
 		select a.measureDate, a.week, b.avg from 
 		(
@@ -38,9 +44,8 @@
 		FROM Weight 
 		where petId=#{petId}
 		group by week
+		order by week
 	</select>
-	
-	
 	
 	<select id="getWeight" resultType="com.petharu.web.entity.Weight">
 		select * from Weight where id=#{id}

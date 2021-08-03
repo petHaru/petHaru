@@ -75,3 +75,40 @@
             .up{
                 color: rgb(255, 121, 97);
             }
+            
+.overlay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    background:rgba(0,0,0,0.4);
+    z-index:1;
+    --display:none;
+  }
+  
+.popup{
+    position:absolute;
+    top:25%;
+    left:40%;
+    width: 510px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    --transform:translate(-50%,-50%) scale(0);
+}
+
+	.close-btn{
+	    display: flex;
+	    margin: 10px;
+	}
+	
+	.close-btn>img{
+	    width: 15px;
+	    height: auto;
+	    opacity: 0.8;
+	    margin-left: auto;
+	    cursor: pointer;  
+	}
