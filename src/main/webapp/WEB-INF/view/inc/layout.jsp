@@ -12,6 +12,8 @@
     <title>${title}</title>
     <link href="../../css/layout.css" type="text/css" rel="stylesheet">
     <link href="../../css/<tiles:getAsString name="css" />" type="text/css" rel="stylesheet" />
+	<script src="/js/<tiles:getAsString name="js" />"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 
 <body>

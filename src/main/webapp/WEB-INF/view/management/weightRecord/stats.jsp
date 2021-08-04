@@ -3,8 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<script src="/js/management/weightRecord/stats.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
                 <main id="main">
                     <div class="record">
                         

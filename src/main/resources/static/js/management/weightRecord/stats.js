@@ -28,7 +28,6 @@ window.addEventListener("load",()=>{
 					"spetId": $('.petId').val(),
 					},
 			success : function(weightList){
-				/*console.log(weightList[0].measureDate)*/
 				let popTr = document.querySelector(".popTr")
 				let td = ""
 				
@@ -42,6 +41,7 @@ window.addEventListener("load",()=>{
 					if(minute<10)
 						minute="0"+minute
 					
+					//am,pm 구분
 					if(hour>12 && hour<24){
 						measureTime = hour-12+":"+minute						
 					}else if(hour==12){
@@ -53,7 +53,10 @@ window.addEventListener("load",()=>{
 						measureTime = hour+12+":"+minute
 						meridiem = "AM"
 					}
-						
+					
+					/*console.log(weightList[i].kg)*/
+					
+					//삽입할 엘리먼트
 					td = `<tr>
 							  <td>${weightList[i].measureDate}</td>
 							  <td class="${meridiem}">${measureTime+" "+meridiem}</td>
@@ -63,10 +66,7 @@ window.addEventListener("load",()=>{
 				//popup창에 데이터 삽입
 				popTr.insertAdjacentHTML("beforeend", td);
 				}
-				
-				console.log(popTr.children)
-								
-				
+				/*console.log(popTr.children)*/
 			}
 		})
 		
@@ -82,11 +82,11 @@ function closePopup(){
      let popup = document.querySelector(".popup");
 	 let popTr = document.querySelector(".popTr")
      let num = popTr.children.length
-     
+     	
+     	//popup창 닫기
         if(!overlay.classList.contains("d-none")&&!popup.classList.contains("d-none")){
             overlay.classList.add("d-none");
             popup.classList.add("d-none");
-        console.log(num)
         
         //popup창 데이터 삭제
 		for(let i = 0; i < 3*num; i++) {
