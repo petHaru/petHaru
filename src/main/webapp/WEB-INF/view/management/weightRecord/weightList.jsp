@@ -32,12 +32,18 @@
                             			<a href="edit?petId=${n.petId}&id=${n.id}">${n.measureDate}</a>
                             		</td>
                             		
-                            		<!-- AM, PM 구분 -->
-	                            	<c:if test="${numhour>12}">
+                            		<!-- AM, PM 구분 -->          		
+	                            	<c:if test="${numhour>12 and numhour<24}">
 	                            		<td class="pm">${numhour-12}:${minute} PM</td>
 	                            	</c:if>
-	                            	<c:if test="${numhour<=12}">
+	                            	<c:if test="${numhour==12}">
+	                            		<td class="pm">${numhour}:${minute} PM</td>
+	                            	</c:if>
+	                            	<c:if test="${numhour<12 and numhour>0}">
 	                            		<td class="am">${numhour}:${minute} AM</td>
+	                            	</c:if>
+	                            	<c:if test="${numhour==00}">
+	                            		<td class="am">${numhour+12}:${minute} AM</td>
 	                            	</c:if>
 	                            	
                             		<td>${n.kg} KG</td>

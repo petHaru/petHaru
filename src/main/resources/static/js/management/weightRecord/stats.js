@@ -7,8 +7,8 @@ window.addEventListener("load",()=>{
 		let line = table.parentElement
 		let preWeek = line.getElementsByClassName('preWeek')
 		
-		/*console.log(line)*/
-
+		
+		//popup창 나타내기
 		var overlay = document.querySelector(".overlay")
         var popup = document.querySelector(".popup");
 		
@@ -19,6 +19,7 @@ window.addEventListener("load",()=>{
 	        }
 		}
 		
+		//popup창에 삽입할 데이터 불러오기
 		$.ajax({
 			url : "/api/weightRecord/list",
 			type : "post",
@@ -32,12 +33,34 @@ window.addEventListener("load",()=>{
 				let td = ""
 				
 				for(let i=0; i<weightList.length; i++){
+					let time = weightList[i].measureTime
+					let hour = parseInt(time.substr(0,2))
+					let minute = parseInt(time.substr(3,5))
+					let measureTime = ""
+					let meridiem ="PM"
+					
+					if(minute<10)
+						minute="0"+minute
+					
+					if(hour>12 && hour<24){
+						measureTime = hour-12+":"+minute						
+					}else if(hour==12){
+						measureTime = hour+":"+minute
+					}else if(hour<12 && hour>0){
+						measureTime = hour+":"+minute
+						meridiem = "AM"												
+					}else if(hour==0){
+						measureTime = hour+12+":"+minute
+						meridiem = "AM"
+					}
+						
 					td = `<tr>
 							  <td>${weightList[i].measureDate}</td>
-							  <td>${weightList[i].measureTime}</td>
-							  <td>${weightList[i].kg}</td>
+							  <td class="${meridiem}">${measureTime+" "+meridiem}</td>
+							  <td>${weightList[i].kg} KG</td>
 						  </tr>`
 				
+				//popup창에 데이터 삽입
 				popTr.insertAdjacentHTML("beforeend", td);
 				}
 				
@@ -65,6 +88,7 @@ function closePopup(){
             popup.classList.add("d-none");
         console.log(num)
         
+        //popup창 데이터 삭제
 		for(let i = 0; i < 3*num; i++) {
 			popTr.removeChild(popTr.children[0]);
 		}
