@@ -127,10 +127,13 @@ public class WeightRecordController {
 	@RequestMapping("stats")
 	public String stats(Model model,
 						@RequestParam(name="petId") int petId) {
+		//pet정보
+		Pet pet = service.getPet(petId);
 		
 		//주차별 평균
 		List<WeightStats> weightStats = service.getWeekAvg(petId);
 		
+		model.addAttribute("pet", pet);
 		model.addAttribute("weightStats", weightStats);
 		
 		return "management.weightRecord.stats";

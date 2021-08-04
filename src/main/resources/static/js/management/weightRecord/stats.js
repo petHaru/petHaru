@@ -69,11 +69,7 @@ window.addEventListener("load",()=>{
 				/*console.log(popTr.children)*/
 			}
 		})
-		
-		
-			
-	};
-	
+	}
 })
 
 //close버튼

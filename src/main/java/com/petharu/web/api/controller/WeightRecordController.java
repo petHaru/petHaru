@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.petharu.web.dto.WeightStats;
 import com.petharu.web.dto.WeightWithWeek;
 import com.petharu.web.entity.Pet;
-import com.petharu.web.entity.Weight;
 import com.petharu.web.service.WeightRecordService;
 
 @RestController("apiWeightReordController")
@@ -20,8 +20,8 @@ public class WeightRecordController {
 	
 	@RequestMapping("list")
 	public List<WeightWithWeek> weightList( String sweek,
-									String spetId){
-		
+											String spetId){
+		//string to int
 		int week = Integer.parseInt(sweek);
 		int petId = Integer.parseInt(spetId);
 				
@@ -30,8 +30,19 @@ public class WeightRecordController {
 		
 		//펫 Weight관련 정보
 		List<WeightWithWeek> weightList = service.getWeekWeightList(petId, week);
-		System.out.print("웨이트리트스:"+weightList);
 		
 		return weightList;
+	}
+	
+	@RequestMapping("chart")
+	public List<WeightStats> weightStats( String spetId){
+		
+		//string to int
+		int petId = Integer.parseInt(spetId);
+		
+		//주차별 평균
+		List<WeightStats> weightStats = service.getWeekAvg(petId);
+		
+		return weightStats;
 	}
 }

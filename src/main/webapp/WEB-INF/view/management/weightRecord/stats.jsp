@@ -53,6 +53,7 @@
                             </tbody>
                         </table>
                     </div>
+                    <a href="chart?petId=${pet.id}">차트</a>
                     <div class="overlay d-none"></div>
                     <div class="popup d-none">
 						<div class="close-btn">

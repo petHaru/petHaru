@@ -1,17 +1,41 @@
 window.addEventListener("load", ()=>{
 	
-	var chart = $('#chart');
-	var lineChart = new Chart(chart, {
-	
-	type:'line',
-	data:{
-		labels:['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
-		datasets:[{
-			label: '2021',
-			data: [0, 10, 5, 2, 20, 30, 45, 28, 34, 46, 27, 14]
-			}
-		]
-	}
-})
+	$.ajax({
+	url : "/api/weightRecord/chart",
+	type : "post",
+	dataType : "json",
+	data : {"spetId": $('.petId').val()},
+	success : function(weightStats){
 
+		let size = weightStats.length
+		let week = []
+		let avg = []
+		let basicWeek = weightStats[0].week;
+		let preWeek = 0;
+		
+		for(let i=0; i<size; i++){
+			preWeek = weightStats[i].week
+			week.push(preWeek-basicWeek+"주")
+			avg.push(weightStats[i].avg)
+		}
+		
+		console.log(week)
+		console.log(avg)
+		
+		let chart = $('#chart');
+		let lineChart = new Chart(chart, {
+		
+		type:'line',
+		data:{
+			labels:week,
+			datasets:[{
+				label: '주차별 평균 체중',
+				data: avg
+					}]
+				}
+			})
+		
+		}
+		
+	})
 })

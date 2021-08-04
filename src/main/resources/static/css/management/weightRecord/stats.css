@@ -63,6 +63,11 @@
                 overflow-y: scroll;
             }
             
+            	tbody .line:hover{
+            		color: rgb(177, 177, 177);
+            		cursor: pointer;
+            	}
+            
                 .record-table td{
                     width: 200px;
                     height: 37px;
