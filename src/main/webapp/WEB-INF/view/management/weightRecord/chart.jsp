@@ -10,7 +10,7 @@
 	</div>
 	
 	<div class="container">
-		<c:forEach var="n" begin="0" end="${weekSize}">
+		<c:forEach var="n" begin="0" end="${weekSize-1}">
 			<div class="weekContainer" style="display:none;">	
 				<canvas class="chart" id="weekChart${n}"></canvas>
 			</div>

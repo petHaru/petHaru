@@ -1,9 +1,9 @@
 window.addEventListener("load", ()=>{
-	let size = 0;
-	let labelWeek = []
-	let week = []
-	let preWeek = 0;
-	let basicWeek = 0;
+	let size = 0; //week개수
+	let labelWeek = [] // x주,y주 ...
+	let week = [] //x,y...
+	let preWeek = 0; //현재week
+	let basicWeek = 0; //기준(첫번째)week
 	
 	$.ajax({
 	url : "/api/weightRecord/totalChart",
@@ -16,9 +16,7 @@ window.addEventListener("load", ()=>{
 		basicWeek = weightStats[0].week;
 		preWeek = 0;
 		let avg = []
-		
-		console.log(weightStats)
-		
+
 		//list에 데이터 push
 		for(let i=0; i<size; i++){
 			preWeek = weightStats[i].week
@@ -52,20 +50,16 @@ window.addEventListener("load", ()=>{
 	data : {"spetId": $('.petId').val()},
 	success : function(weekWeightList){
 
-		console.log(weekWeightList)
-		console.log(typeof(week[0]))
+		let totalSize = weekWeightList.length //데이터 개수
+		let date = "" //측정날짜
+		let time = "" //측정시간
+		let dateTime = [] //date+time
+		let kg = [] //체중
 		
-		
-		let totalSize = weekWeightList.length;
-		let date = ""
-		let time = ""
-		let dateTime = []
-		let kg = []
-		
-		
+		//주차별 체중변화 chart 및 chart별 데이터 push
 		for(let i=0; i<size; i++){
 			for(let j=0; j<totalSize; j++){
-				//현재 데이터 변수에 담기
+				//현재주차 데이터 변수에 담기
 				preWeek = weekWeightList[j].week
 				date = weekWeightList[j].measureDate
 				time = weekWeightList[j].measureTime
@@ -88,21 +82,18 @@ window.addEventListener("load", ()=>{
 				data:{
 					labels: dateTime,
 					datasets:[{
-						label: labelWeek[i],
+						label: labelWeek[i]+'차',
 						data: kg
 							}]
 						}
 				})
-			basicWeek++
-			dateTime = []
-			kg = []
+			basicWeek++ //기준week +1
+			dateTime = [] //list 초기화
+			kg = [] //list 초기화
 		}
 	}
 })
 
-	
-	
-	
 	
 	//버튼 클릭 이벤트
 	let weekBtn = document.querySelector(".weekBtn")
@@ -113,7 +104,7 @@ window.addEventListener("load", ()=>{
 		$('.weekContainer').show();
 	}
 	
-		totalBtn.onclick = ()=>{
+	totalBtn.onclick = ()=>{
 		$('.totalContainer').show();
 		$('.weekContainer').hide();
 	}
