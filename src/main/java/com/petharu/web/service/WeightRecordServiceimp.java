@@ -38,6 +38,11 @@ public class WeightRecordServiceimp implements WeightRecordService {
 	}
 	
 	@Override
+	public List<WeightWithWeek> getAllWeekWeightList(int petId) {
+		return dao.getAllWeekWeightList(petId);
+	}
+	
+	@Override
 	public List<WeightStats> getWeightStats(int petId) {
 		return dao.getWeightStats(petId);
 	}

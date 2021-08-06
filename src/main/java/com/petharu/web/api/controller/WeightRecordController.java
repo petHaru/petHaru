@@ -24,9 +24,6 @@ public class WeightRecordController {
 		//string to int
 		int week = Integer.parseInt(sweek);
 		int petId = Integer.parseInt(spetId);
-				
-		//펫정보
-		Pet pet = service.getPet(petId);
 		
 		//펫 Weight관련 정보
 		List<WeightWithWeek> weightList = service.getWeekWeightList(petId, week);
@@ -34,7 +31,7 @@ public class WeightRecordController {
 		return weightList;
 	}
 	
-	@RequestMapping("chart")
+	@RequestMapping("totalChart")
 	public List<WeightStats> weightStats( String spetId){
 		
 		//string to int
@@ -44,5 +41,17 @@ public class WeightRecordController {
 		List<WeightStats> weightStats = service.getWeekAvg(petId);
 		
 		return weightStats;
+	}
+	
+	@RequestMapping("weekChart")
+	public List<WeightWithWeek> weekWeightList( String spetId){
+		
+		//string to int
+		int petId = Integer.parseInt(spetId);
+		
+		//펫 Weight관련 정보
+		List<WeightWithWeek> weekWeightList = service.getAllWeekWeightList(petId);
+		
+		return weekWeightList;
 	}
 }

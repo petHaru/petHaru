@@ -13,6 +13,7 @@ public interface WeightRecordService {
 	Pet getPet(int petId);
 	List<Weight> getWeightList(int petId);
 	List<WeightWithWeek> getWeekWeightList(int petId, int week);
+	List<WeightWithWeek> getAllWeekWeightList(int petId);
 	Weight getWeight(int id);
 	List<WeightStats> getWeightStats(int petId);
 	List<WeightStats> getWeekAvg(int petId);

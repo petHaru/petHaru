@@ -1,0 +1,16 @@
+@charset "UTF-8";
+/* ------------main-------------------- */
+/* #main{
+	height:100%;
+	width:100%;
+} */
+
+.container{
+	display:flex;
+	flex-direction: column;
+}
+
+.weekContainer{
+	width: 50%;
+	margin:0;
+}

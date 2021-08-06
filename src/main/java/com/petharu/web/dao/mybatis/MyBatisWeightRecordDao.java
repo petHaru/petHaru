@@ -45,6 +45,11 @@ public class MyBatisWeightRecordDao implements WeightRecordDao {
 	}
 	
 	@Override
+	public List<WeightWithWeek> getAllWeekWeightList(int petId) {
+		return mapper.getAllWeekWeightList(petId);
+	}
+	
+	@Override
 	public List<WeightStats> getWeightStats(int petId) {
 		return mapper.getWeightStats(petId);
 	}
@@ -73,5 +78,4 @@ public class MyBatisWeightRecordDao implements WeightRecordDao {
 	public int delete(int id) {
 		return mapper.delete(id);
 	}
-
 }
