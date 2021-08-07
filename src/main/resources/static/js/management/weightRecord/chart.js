@@ -14,7 +14,6 @@ window.addEventListener("load", ()=>{
 
 		size = weightStats.length
 		basicWeek = weightStats[0].week;
-		preWeek = 0;
 		let avg = []
 
 		//list에 데이터 push
@@ -34,7 +33,11 @@ window.addEventListener("load", ()=>{
 				labels:labelWeek,
 				datasets:[{
 					label: '전체 평균체중 변화',
-					data: avg
+					data: avg,
+					
+					backgroundColor: 'rgba(255,0,0,0.5)',
+					borderColor: 'rgba(255,0,0,0.5)',
+					borderWidth:3
 						}]
 					}
 			})		
@@ -55,6 +58,7 @@ window.addEventListener("load", ()=>{
 		let time = "" //측정시간
 		let dateTime = [] //date+time
 		let kg = [] //체중
+		let meridiem = "PM" //AM or PM
 		
 		//주차별 체중변화 chart 및 chart별 데이터 push
 		for(let i=0; i<size; i++){
@@ -63,6 +67,35 @@ window.addEventListener("load", ()=>{
 				preWeek = weekWeightList[j].week
 				date = weekWeightList[j].measureDate
 				time = weekWeightList[j].measureTime
+				
+				//date 가공
+				let year = date.substr(2,2)
+				let month = date.substr(5,2)
+				let day = date.substr(8,2)
+				date = year+"/"+month+"/"+day
+				
+				
+				//time 가공
+				let hour = parseInt(time.substr(0,2))
+				let minute = parseInt(time.substr(3,5))
+				
+				if(minute<10)
+					minute="0"+minute
+				
+				//am,pm 구분
+				if(hour>12 && hour<24){
+					time = hour-12+":"+minute						
+				}else if(hour==12){
+					time = hour+":"+minute
+				}else if(hour<12 && hour>0){
+					time = hour+":"+minute
+					meridiem = "AM"												
+				}else if(hour==0){
+					time = hour+12+":"+minute
+					meridiem = "AM"
+				}
+				
+				time = time+meridiem
 				
 				basicWeek = preWeek - weekWeightList[0].week;
 				//현재week == 기준week이면 데이터 push 
