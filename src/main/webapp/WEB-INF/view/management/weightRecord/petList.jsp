@@ -3,17 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <main id="main">
-    <div class="pet-list-box">
         <div class="subject">
             <h1 class="title">반려동물 선택</h1>
         </div>
-        <div class="pet-list">
-        <c:forEach var="n" items="${list}">
+        <div class="petList">
+	        <c:forEach var="n" items="${list}">
         		<div class="pet">
-                <a href="weightList?petId=${n.id}"><img class="img" src="../../images/${n.image}"></a>
-                ${n.name}
+                	<a href="weightList?petId=${n.id}"><img class="img" src="../../images/${n.image}"></a>
+                	<p class="petName">${n.name}</p>
             	</div>
-        </c:forEach>
+	        </c:forEach>
         </div>
-    </div>
 </main>
