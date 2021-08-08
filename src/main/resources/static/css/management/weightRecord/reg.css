@@ -1,135 +1,135 @@
 @charset "UTF-8";
 /* ------------main-------------------- */
 #main{
-    grid-area: main;
     display: flex;
+    flex-direction: column;	
     align-items: center;
+    height:90%;
 }
+	.subject{
+	    height: 50px;
+	    text-align: center;
+	    width: 100%;
+	    margin-bottom:2%;
+	}
+		.subject h1{
+		    color: orange;
+		    font-size: 22px;
+		    display: inline-block;
+		    border-bottom: 4px solid;
+		    padding-bottom: 10px;
+		    margin-right: 10px;
+		    margin-bottom: 10px;
+		    
+		}
 
-        /* -------------------------------- */
-    
-        .form{
-            border: none;
-            padding: 0;
-            /* margin-top: 30px; */
-            height: 60vh;
+    .form{
+        height: 75%;
+        width: 65%;
+        background-color: antiquewhite;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px;
+        
+    }
+
+        .regTable{
+            height: 80%;
             width: 100%;
-            
+
             display: flex;
             justify-content: center;
         }
-    
-            .weight-input{
-                background-color: antiquewhite;
+
+            .regTable tbody{
                 height: 100%;
-                width: 100vh;
+                width: 100%;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+            }
+
+                tr{
+                    display: flex;
+
+                    height: 25%;
+                    width: 70%;
+                }
+                    tr td{
+                        display: flex;
+                        align-items: center;
+
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    .tdTitle{
+                        display: flex;
+                        justify-content: center;
+
+                        height: 100%;
+                        width: 20%;
+                    }
+
+                    .date{
+                        height: 40%;
+                        width: 50%;
+                    }
+                    .time{
+                        height: 40%;
+                        width: 50%;
+                    }
+                    .kg{
+                        height: 40%;
+                        width: 50%;
+                    }
+
+                        td input{
+                            height: 70%;
+                            width: 100%;
+
+                            border: 0;
+                            border-radius: 7px;
+                        }
+        
+        .btnContainer{
+            display: flex;
+            justify-content: space-evenly;
+
+
+            height: 10%;
+            width: 60%;
+        }
+
+            .submitBtn,
+            .cancelBtn{
+                margin: 0;
+                border: 0;
+                background-color: rgb(255, 209, 124);
+                border-radius: 10px;
                 font-family: sans-serif;
                 font-weight: bold;
-                border-radius: 10px;
-                
-    
-                display: flex;
-                position: relative;
-                flex-direction: column;
-    
-                align-items: center;
-                justify-content: space-evenly;
+                font-size: 14px;
             }
-    
-                    .record{
-                        padding: 7px 7px 7px 7px;
-                        font-size: 20px;
-                        color: rgb(82, 82, 82);
-                        background-color: rgb(255, 226, 188);
-                        background-size: 5vh;
-                        border-radius: 10px;
-    
-                        position: absolute;
-                        top: 4vh;
-                        left: 49vh;
-                    }
-    
-    
-                    .weight-input-container input{
-                        position: absolute;
-                        right: 17vh;
-                    }
-    
-                        .input-date{
-                            top:13.3vh;
-                        }
-    
-                        .input-time{
-                            top:25vh;
-                        }
-    
-                        .input-weight{
-                            top:37vh
-                        }
-    
-    
-                    .weight-input label{
-                        position: absolute;
-                        left: 26vh;
-                    }
-    
-                        .weight-input .date{
-                            height: 35px;
-                            width: 35px;
-                            background-image: url("../../../images/icon-calendar.png");
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position: center;
-    
-                            top: 14.5vh;
-                        }
-    
-                        .weight-input .time{
-                            height: 35px;
-                            width: 35px;
-                            background-image: url("../../../images/icon-time.png");
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position: center;
-    
-                            top: 26vh;
-                        }
-                        .weight-input .weight{
-                            height: 35px;
-                            width: 35px;
-                            background-image: url("../../../images/icon-weight.png");
-                            background-repeat: no-repeat;
-                            background-size: cover;
-                            background-position: center;
-    
-                            top: 38vh;
-                        }
-    
-                    .weight-input input{
-                        height: 7vh;
-                        width: 50vh;
-                        border: 0;
-                        border-radius: 7px;
-                    }
-    
-    
-                    .weight-input .submit{
-                        height: 7vh;
-                        width: 20vh;
-                        border: 0;
-                        border-radius: 7px;
-    
-                        margin: 0;
-                        border: 0;
-                        background-color: rgb(255, 209, 124);
-                        font-family: sans-serif;
-                        font-weight: bold;
-                        font-size: 15px;
-    
-                        position: absolute;
-                        left: 45vh;
-                    }
-    
-                    .weight-input .submit:hover{
-                        opacity: 50%;
-                    }
+
+            .submitBtn{
+                cursor: pointer;
+
+                height: 100%;
+                width: 30%;
+            }
+            .cancelBtn{
+                padding: 3% 11.1%;
+                height: 46%;
+            }
+
+            .submitBtn:hover,
+            .cancelBtn:hover{
+                opacity: 50%;
+            }
