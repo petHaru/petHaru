@@ -10,7 +10,7 @@
                     <div class="record">
                         <table class="recordTable">
                             <thead>
-                                <tr class="tr">
+                                <tr class="headTr">
                                     <td class="img date"></td>
                                     <td class="img time"></td>
                                     <td class="img weight"></td>

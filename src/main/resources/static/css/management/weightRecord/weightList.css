@@ -34,20 +34,16 @@
         
     }
 
-        .regBtn:hover,
-        .statsBtn:hover{
-            opacity: 50%;
-        }
-
         .recordTable{
 			margin-top:3%;
             font-weight: bold;
             text-align: center;
         }
             
-            	.tr{
+            	.headTr{
             		width:100%;
-            		display:flex;	
+            		display:flex;
+            		margin-bottom: 1%;
             	}
               
                 thead .date{
@@ -74,7 +70,7 @@
 
             tbody{
                 position: absolute;
-                height: 70%;
+                height: 65%;
                 overflow-x: hidden;
                 overflow-y: scroll;
             }
@@ -96,30 +92,35 @@
             }
             
         .regBtn{
-            padding: 10px 35px;
+            padding: 13px 35px;
             border: none;
             font-family: sans-serif;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 14px;
             background-color: rgb(255, 209, 124);
             border-radius: 10px;
 
             position: absolute;
-			bottom: 5.5%;
+			bottom: 7%;
 			left: 29%;
             
         }
         
         .statsBtn{
-            padding: 10px 35px;
+            padding: 13px 35px;
             border: none;
             font-family: sans-serif;
             font-weight: bold;
-            font-size: 13px;
+            font-size: 14px;
             background-color: rgb(255, 209, 124);
             border-radius: 10px;
 
             position: absolute;
-            bottom: 5.5%;
+            bottom: 7%;
             right: 27%;
-        }    
+        }
+        
+        .regBtn:hover,
+        .statsBtn:hover{
+            opacity: 50%;
+        }
