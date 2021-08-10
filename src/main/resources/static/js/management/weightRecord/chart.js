@@ -35,8 +35,8 @@ window.addEventListener("load", ()=>{
 					label: '전체 평균체중 변화',
 					data: avg,
 					
-					backgroundColor: 'rgba(255,0,0,0.5)',
-					borderColor: 'rgba(255,0,0,0.5)',
+					backgroundColor: 'orange',
+					borderColor: 'orange',
 					borderWidth:3
 						}]
 					}
