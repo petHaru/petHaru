@@ -1,5 +1,5 @@
 window.addEventListener("load",()=>{
-	let recordTable = document.querySelector(".record-table");
+	let recordTable = document.querySelector(".statsTable");
 	
 	//pop-up창
 	recordTable.onclick = (e)=>{
@@ -28,7 +28,7 @@ window.addEventListener("load",()=>{
 					"spetId": $('.petId').val(),
 					},
 			success : function(weightList){
-				let popTr = document.querySelector(".popTr")
+				let popTbody = document.querySelector(".popTbody")
 				let td = ""
 				
 				for(let i=0; i<weightList.length; i++){
@@ -64,7 +64,7 @@ window.addEventListener("load",()=>{
 						  </tr>`
 				
 				//popup창에 데이터 삽입
-				popTr.insertAdjacentHTML("beforeend", td);
+				popTbody.insertAdjacentHTML("beforeend", td);
 				}
 				/*console.log(popTr.children)*/
 			}
@@ -76,8 +76,8 @@ window.addEventListener("load",()=>{
 function closePopup(){
 	 let overlay = document.querySelector(".overlay");
      let popup = document.querySelector(".popup");
-	 let popTr = document.querySelector(".popTr")
-     let num = popTr.children.length
+	 let popTbody = document.querySelector(".popTbody")
+     let num = popTbody.children.length
      	
      	//popup창 닫기
         if(!overlay.classList.contains("d-none")&&!popup.classList.contains("d-none")){
@@ -86,7 +86,7 @@ function closePopup(){
         
         //popup창 데이터 삭제
 		for(let i = 0; i < 3*num; i++) {
-			popTr.removeChild(popTr.children[0]);
+			popTbody.removeChild(popTbody.children[0]);
 		}
 	}
 }

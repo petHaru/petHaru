@@ -1,66 +1,63 @@
 @charset "UTF-8";
 /* ------------main-------------------- */
 #main{
-    grid-area: main;
     display: flex;
+    flex-direction: column;	
     align-items: center;
-    justify-content: center;
+    height:90%;
 }
-    .record{
-        border: none;
-        padding: 0;
-        height: 60vh;
-        width: 754.4px;
+	.subject{
+	    height: 50px;
+	    text-align: center;
+	    width: 100%;
+	    margin-bottom:2%;
+	}
+		.subject h1{
+		    color: orange;
+		    font-size: 22px;
+		    display: inline-block;
+		    border-bottom: 4px solid;
+		    padding-bottom: 10px;
+		    margin-right: 10px;
+		    margin-bottom: 10px;
+		    
+		}
+		
+    .stats{
+        height: 70%;
+        width: 70%;
+        background-color: antiquewhite;
         
         display: flex;
-        position: relative;
         justify-content: center;
+        position: relative;
         
     }
 
-        .record-table{
-            background-color: antiquewhite;
-            height: 452px;
-            width: 100vh;
-            font-family: sans-serif;
+        .statsTable{
+        	height:75%;
+      		
+			margin-top:auto;
+			margin-bottom:auto;
             font-weight: bold;
-            border-radius: 10px;
-            border-collapse: collapse;
-            table-layout: fixed;
             text-align: center;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: space-evenly;
         }
 
-            .record-title{
-                padding: 7px 7px 7px 7px;
-                font-size: 20px;
-                color: rgb(82, 82, 82);
-                background-color: rgb(255, 226, 188);
-                background-size: 5vh;
-                border-radius: 10px;
-
-                position: absolute;
-                top: 2vh;
-                left: 42vh;
+            .headTr{
+           		width:100%;
+           		display:flex;
+           		margin-bottom: 1%;
             }
-
-            thead{
-                position: absolute;
-                top: 10vh;
-                left: 8.5vh;
-            }
+            
             tbody{
-                font-size: 17px;
-
                 position: absolute;
-                top: 15vh;
-                height: 280px;
+                height: 65%;
                 overflow-x: hidden;
                 overflow-y: scroll;
+            }
+            
+            tbody::-webkit-scrollbar{ 
+            	display:none;
             }
             
             	tbody .line:hover{
@@ -68,7 +65,7 @@
             		cursor: pointer;
             	}
             
-                .record-table td{
+                .statsTable td{
                     width: 200px;
                     height: 37px;
                 }
@@ -103,10 +100,16 @@
     justify-content: center;
     z-index: 2;
     --transform:translate(-50%,-50%) scale(0);
+    
+    display:flex;
+    flex-direction: column;
 }
 
+	.popTable{
+		background-color: antiquewhite;
+	}
+
 	.close-btn{
-	    display: flex;
 	    margin: 10px;
 	}
 	
