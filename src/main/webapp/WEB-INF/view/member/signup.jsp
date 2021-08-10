@@ -4,12 +4,12 @@
                     <div class="signup-main">
                         <section class="signup-form">
                             <h1 class="d-none">회원가입폼</h1>
-                            <form action="signup" method="post">
+                            <form action="reg" method="post">
                                 <fieldset>
                                     <legend class="d-none"> 회원가입 필드</legend>
                                         <div class="id-input signup-input-container">
                                             <label class="signup-lable">아이디</label>
-                                            <input class="signup-input" type="text" name="id" placeholder="공백 없는 영문/숫자 포함 6-20자">
+                                            <input class="signup-input" type="text" name="userId" placeholder="공백 없는 영문/숫자 포함 6-20자">
                                         </div>
                                         <div class="password-input signup-input-container">
                                             <label class="signup-lable">비밀번호</label>

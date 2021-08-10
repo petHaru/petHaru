@@ -1,10 +1,12 @@
 package com.petharu.web.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.petharu.web.dao.mybatis.MyBatisMemberDao;
 import com.petharu.web.entity.Member;
 
+@Service
 public class MemberServiceImp implements MemberService {
 
 	@Autowired
@@ -13,7 +15,7 @@ public class MemberServiceImp implements MemberService {
 	@Override
 	public int insert(Member member) {
 		// TODO Auto-generated method stub
-		return 0;
+		return dao.insert(member);
 	}
 
 }
