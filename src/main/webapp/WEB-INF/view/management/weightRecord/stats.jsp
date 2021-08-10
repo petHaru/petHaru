@@ -3,13 +3,23 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                 <main id="main">
                     <div class="subject">
 			            <h1 class="title">체중통계</h1>
 			        </div>
-			        <a href="chart?petId=${pet.id}">차트</a> 
-                    <div class="stats">
+			        
+					<input class="petId" type="hidden" value="${pet.id}" />
+					<div class="totalContainer">
+						<canvas id="totalChart"></canvas>
+					</div>
+					
+			        <%-- <a href="chart?petId=${pet.id}">차트</a> --%> 
+                    <!-- <div class="stats"> -->
                         <table class="statsTable">
+		                    <div class="tableTitle">
+					            <h3 class="title">데이터</h3>
+					        </div>                        	
                             <thead>
                                 <tr class="headTr">
                                 	<td>주차</td>
@@ -53,7 +63,7 @@
 	                            </c:forEach>
                             </tbody>
                         </table>
-                    </div>
+                    <!-- </div> -->
                     <div class="overlay d-none"></div>
                     <div class="popup d-none">
 						<div class="close-btn">

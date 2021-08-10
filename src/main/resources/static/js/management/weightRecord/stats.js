@@ -1,3 +1,59 @@
+/*chart*/
+window.addEventListener("load",()=>{
+	let size = 0; //week개수
+	let labelWeek = [] // x주,y주 ...
+	let week = [] //x,y...
+	let preWeek = 0; //현재week
+	let basicWeek = 0; //기준(첫번째)week
+	
+	$.ajax({
+	url : "/api/weightRecord/totalChart",
+	type : "post",
+	dataType : "json",
+	data : {"spetId": $('.petId').val()},
+	success : function(weightStats){
+
+		size = weightStats.length
+		basicWeek = weightStats[0].week;
+		let avg = []
+
+		//list에 데이터 push
+		for(let i=0; i<size; i++){
+			preWeek = weightStats[i].week
+			week.push(preWeek-basicWeek)
+			labelWeek.push(preWeek-basicWeek+"주")
+			avg.push(weightStats[i].avg)
+		}
+		
+		//totalChart(전체 평균체중 변화) 생성
+		let totalChart = $('#totalChart');
+		new Chart(totalChart, {
+		
+			type:'line',
+			data:{
+				labels:labelWeek,
+				datasets:[{
+					label: '전체 평균체중 변화',
+					data: avg,
+					
+					backgroundColor: 'rgba(255,166,0)',
+					borderColor: 'rgba(255,166,0)',
+					borderWidth:3
+						}]
+					},
+			options:{
+				maintainAspectRatio: false
+			}
+			
+			})		
+		}
+		
+	})
+	
+})
+
+
+/*popup창*/
 window.addEventListener("load",()=>{
 	let recordTable = document.querySelector(".statsTable");
 	

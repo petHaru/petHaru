@@ -22,53 +22,74 @@
 		    margin-bottom: 10px;
 		    
 		}
-		
-    .stats{
-        height: 70%;
-        width: 70%;
-        background-color: antiquewhite;
-        
-        display: flex;
-        justify-content: center;
-        position: relative;
-        
-    }
+	
+	.totalContainer{
+		height:50%;
+		width:90%;
+	}
+	
+	#totalChart{
+		height:100%;
+		width:100%;
+	}
+
 
         .statsTable{
-        	height:75%;
-      		
-			margin-top:auto;
-			margin-bottom:auto;
-            font-weight: bold;
-            text-align: center;
+		    height: 100%;
+		    width: 64.5%;
+		    font-weight: bold;
+		    text-align: center;
+		    /* background-color: antiquewhite; */
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
         }
+        	
+        	.tableTitle .title{
+        		margin-bottom: 0;
+        	}
+        
+			.statsTable td{
+		        width: 200px;
+		        height: 37px;
+			}
 
             .headTr{
-           		width:100%;
-           		display:flex;
-           		margin-bottom: 1%;
+				width: 100%;
+			    display: flex;
+			    border-bottom: solid 1px white;	
+			    background-color: antiquewhite;
             }
             
+            	.headTr td{
+            		display:flex;
+            		justify-content: center;
+            		align-items: center;
+            	}
+            
             tbody{
-                position: absolute;
-                height: 65%;
-                overflow-x: hidden;
+                /* position: absolute; */
+                height: 80%;
+                /* overflow-x: hidden;*/
                 overflow-y: scroll;
+                background-color: antiquewhite;
             }
             
             tbody::-webkit-scrollbar{ 
-            	display:none;
+            	background-color: red;
+            }
+            tbody::-webkit-scrollbar-thumb{ 
+            	background-color: rgba(169,169,169,0.3);
+            }
+            tbody::-webkit-scrollbar-track{ 
+            	background-color: antiquewhite;
             }
             
             	tbody .line:hover{
             		color: rgb(177, 177, 177);
             		cursor: pointer;
             	}
-            
-                .statsTable td{
-                    width: 200px;
-                    height: 37px;
-                }
             
             .down{
                 color: rgb(126, 126, 255);
