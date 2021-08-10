@@ -16,7 +16,7 @@
                                     <td class="img weight"></td>
                                 </tr>
                             </thead>
-                            <tbody class="tbody">
+                            <tbody>
 	                            <c:forEach var="n" items="${weightList}">
 	                            	
 	                            	<!-- time변수 설정 -->

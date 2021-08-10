@@ -35,7 +35,7 @@
     }
 
         .recordTable{
-			margin-top:3%;
+			margin-top:5%;
             font-weight: bold;
             text-align: center;
         }
@@ -101,7 +101,7 @@
             border-radius: 10px;
 
             position: absolute;
-			bottom: 7%;
+			bottom: 5%;
 			left: 29%;
             
         }
@@ -116,7 +116,7 @@
             border-radius: 10px;
 
             position: absolute;
-            bottom: 7%;
+            bottom: 5%;
             right: 27%;
         }
         
