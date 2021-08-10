@@ -4,19 +4,18 @@ public class Member {
 	private Integer id;
 	private String userId;
 	private String password;
-	private String name;
 	private String email;
 	
 	public Member() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Member(Integer id, String userId, String password, String name, String email) {
+	public Member(Integer id, String userId, String password, String email) {
 		super();
 		this.id = id;
 		this.userId = userId;
 		this.password = password;
-		this.name = name;
+		
 		this.email = email;
 	}
 
@@ -44,14 +43,6 @@ public class Member {
 		this.password = password;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -59,5 +50,11 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", userId=" + userId + ", password=" + password + ", email=" + email + "]";
+	}
+	
 	
 }
