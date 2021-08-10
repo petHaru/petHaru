@@ -9,7 +9,7 @@
 			            <h1 class="title">체중통계</h1>
 			        </div>
 			        
-					<input class="petId" type="hidden" value="${pet.id}" />
+			        
 					<div class="totalContainer">
 						<canvas id="totalChart"></canvas>
 					</div>
@@ -18,7 +18,7 @@
                     <!-- <div class="stats"> -->
                         <table class="statsTable">
 		                    <div class="tableTitle">
-					            <h3 class="title">데이터</h3>
+					            <h5 class="title">주차별 평균체중 데이터</h5>
 					        </div>                        	
                             <thead>
                                 <tr class="headTr">
@@ -69,15 +69,22 @@
 						<div class="close-btn">
 							<img src="../../images/icon-close-btn.png" onclick="closePopup()" alt="">
 						</div>
-                    	<table class="statsTable popTable">
+
+
+						<div class="weekContainer">
+							<%-- <canvas class="chart" id="weekChart"></canvas> --%>
+						</div>
+
+						
+                    	<table class="popTable">
                             <thead>
-                                <tr class="tr">
+                                <tr class="popTr">
                                     <td class="img date">날짜</td>
                                     <td class="img time">시간</td>
                                     <td class="img weight">몸무게</td>
                                 </tr>
                             </thead>
-                            <tbody class="tbody popTbody">
+                            <tbody class="popTbody">
                              </tbody>
                         </table>
                      </div>

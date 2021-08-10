@@ -48,6 +48,7 @@
         	
         	.tableTitle .title{
         		margin-bottom: 0;
+        		font-weight: lighter;
         	}
         
 			.statsTable td{
@@ -91,11 +92,13 @@
             		cursor: pointer;
             	}
             
-            .down{
+            .down,
+            .AM{
                 color: rgb(126, 126, 255);
             }
             
-            .up{
+            .up,
+            .PM{
                 color: rgb(255, 121, 97);
             }
             
@@ -112,24 +115,59 @@
   
 .popup{
     position:absolute;
-    top:25%;
-    left:40%;
-    width: 510px;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    --transform:translate(-50%,-50%) scale(0);
+    background-color: white;
+/*     top:25%;
+    left:40%; */
+    height: 600px;
+    width: 750px;
     
-    display:flex;
+    display: flex;
     flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
+    z-index: 2;
+    transform:translate(0%,50%) scale(1);
+    
 }
 
-	.popTable{
-		background-color: antiquewhite;
+	.weekContainer{
+		height:45%;
+		width:100%;
 	}
+		
+	.popTable{
+		height: 50%;
+	    width: 100%;
+	    font-weight: bold;
+	    text-align: center;
+	    display: flex;
+	    flex-direction: column;
 
+	}
+		.popTable td{
+			width: 240px;
+    		height: 37px;
+		}
+		
+		.popTr{
+			width: 100%;
+		    display: flex;
+		    border-bottom: solid 1px white;
+		    background-color: antiquewhite;
+		}
+		
+			.popTr td{
+				display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
+		
+		.popTbody{
+		    height: 100%;
+		    overflow-y: scroll;
+		    background-color: antiquewhite		
+		}
+		
 	.close-btn{
 	    margin: 10px;
 	}
