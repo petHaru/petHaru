@@ -50,7 +50,7 @@
                                     <legend class="d-none"> 로그인 필드</legend>
                                         <div class="id-input">
                                             <label>아이디</label>
-                                            <input type="text" name="uid">
+                                            <input type="text" name="username">
                                         </div>
                                         <div class="password-input">
                                             <label>비밀번호</label>
@@ -73,7 +73,7 @@
                                 </fieldset>
                         <input class="login-btn font" type="submit" value="로그인"></button>  
                         <div class="btn-signUp">
-                        	<a href="member/signup.html">회원가입</a> 
+                        	<a href="member/signup">회원가입</a> 
                         </div>  
                             </form>
                         </section>   
