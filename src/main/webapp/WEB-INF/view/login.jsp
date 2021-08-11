@@ -73,7 +73,7 @@
                                 </fieldset>
                         <input class="login-btn font" type="submit" value="로그인"></button>  
                         <div class="btn-signUp">
-                        	<a href="member/signup.html">회원가입</a> 
+                        	<a href="member/signup">회원가입</a> 
                         </div>  
                             </form>
                         </section>   
