@@ -1,66 +1,90 @@
 @charset "UTF-8";
 /* ------------main-------------------- */
 #main{
-    grid-area: main;
     display: flex;
+    flex-direction: column;	
     align-items: center;
-    justify-content: center;
+    height:90%;
 }
-    .record{
-        border: none;
-        padding: 0;
-        height: 60vh;
-        width: 754.4px;
-        
-        display: flex;
-        position: relative;
-        justify-content: center;
-        
-    }
+	.subject{
+	    height: 50px;
+	    text-align: center;
+	    width: 100%;
+	    margin-bottom:2%;
+	}
+		.subject h1{
+		    color: orange;
+		    font-size: 22px;
+		    display: inline-block;
+		    border-bottom: 4px solid;
+		    padding-bottom: 10px;
+		    margin-right: 10px;
+		    margin-bottom: 10px;
+		    
+		}
+	
+	.totalContainer{
+		height:50%;
+		width:90%;
+	}
+	
+	#totalChart{
+		height:100%;
+		width:100%;
+	}
 
-        .record-table{
-            background-color: antiquewhite;
-            height: 452px;
-            width: 100vh;
-            font-family: sans-serif;
-            font-weight: bold;
-            border-radius: 10px;
-            border-collapse: collapse;
-            table-layout: fixed;
-            text-align: center;
 
-            display: flex;
-
-            align-items: center;
-            justify-content: space-evenly;
+        .statsTable{
+		    height: 100%;
+		    width: 64.5%;
+		    font-weight: bold;
+		    text-align: center;
+		    /* background-color: antiquewhite; */
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    justify-content: center;
         }
+        	
+        	.tableTitle .title{
+        		margin-bottom: 0;
+        		font-weight: lighter;
+        	}
+        
+			.statsTable td{
+		        width: 200px;
+		        height: 37px;
+			}
 
-            .record-title{
-                padding: 7px 7px 7px 7px;
-                font-size: 20px;
-                color: rgb(82, 82, 82);
-                background-color: rgb(255, 226, 188);
-                background-size: 5vh;
-                border-radius: 10px;
-
-                position: absolute;
-                top: 2vh;
-                left: 42vh;
+            .headTr{
+				width: 100%;
+			    display: flex;
+			    border-bottom: solid 1px white;	
+			    background-color: antiquewhite;
             }
-
-            thead{
-                position: absolute;
-                top: 10vh;
-                left: 8.5vh;
-            }
+            
+            	.headTr td{
+            		display:flex;
+            		justify-content: center;
+            		align-items: center;
+            	}
+            
             tbody{
-                font-size: 17px;
-
-                position: absolute;
-                top: 15vh;
-                height: 280px;
-                overflow-x: hidden;
+                /* position: absolute; */
+                height: 80%;
+                /* overflow-x: hidden;*/
                 overflow-y: scroll;
+                background-color: antiquewhite;
+            }
+            
+            tbody::-webkit-scrollbar{ 
+            	background-color: red;
+            }
+            tbody::-webkit-scrollbar-thumb{ 
+            	background-color: rgba(169,169,169,0.3);
+            }
+            tbody::-webkit-scrollbar-track{ 
+            	background-color: antiquewhite;
             }
             
             	tbody .line:hover{
@@ -68,16 +92,13 @@
             		cursor: pointer;
             	}
             
-                .record-table td{
-                    width: 200px;
-                    height: 37px;
-                }
-            
-            .down{
+            .down,
+            .AM{
                 color: rgb(126, 126, 255);
             }
             
-            .up{
+            .up,
+            .PM{
                 color: rgb(255, 121, 97);
             }
             
@@ -94,19 +115,60 @@
   
 .popup{
     position:absolute;
-    top:25%;
-    left:40%;
-    width: 510px;
-    height: 400px;
+    background-color: white;
+/*     top:25%;
+    left:40%; */
+    height: 600px;
+    width: 750px;
+    
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center; */
     z-index: 2;
-    --transform:translate(-50%,-50%) scale(0);
+    transform:translate(0%,50%) scale(1);
+    
 }
 
-	.close-btn{
+	.weekContainer{
+		height:45%;
+		width:100%;
+	}
+		
+	.popTable{
+		height: 50%;
+	    width: 100%;
+	    font-weight: bold;
+	    text-align: center;
 	    display: flex;
+	    flex-direction: column;
+
+	}
+		.popTable td{
+			width: 240px;
+    		height: 37px;
+		}
+		
+		.popTr{
+			width: 100%;
+		    display: flex;
+		    border-bottom: solid 1px white;
+		    background-color: antiquewhite;
+		}
+		
+			.popTr td{
+				display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
+		
+		.popTbody{
+		    height: 100%;
+		    overflow-y: scroll;
+		    background-color: antiquewhite		
+		}
+		
+	.close-btn{
 	    margin: 10px;
 	}
 	
