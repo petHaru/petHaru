@@ -126,7 +126,7 @@ window.addEventListener("load",()=>{
 					}else if(hour==0){
 						measureTime = hour+12+":"+minute
 						meridiem = "AM"
-					}
+					}				
 					
 					//삽입할 엘리먼트
 					td = `<tr>
@@ -138,14 +138,18 @@ window.addEventListener("load",()=>{
 					//popup창에 데이터 삽입
 					popTbody.insertAdjacentHTML("beforeend", td);
 					
+					//date형식
+					let year = date.substr(2,2)
+					let month = date.substr(5,2)
+					let day = date.substr(8,2)
+					date = year+"/"+month+"/"+day	
+										
 					//list에 데이터 push
 					dateTime.push(date+" "+measureTime+" "+meridiem)
 					kg.push(weightList[i].kg)
 				
 				}
 				//주차 계산
-				console.log(basicWeek)
-				console.log($(preWeek).val())
 				week = $(preWeek).val() - basicWeek
 				
 				//삽입할 canvas
