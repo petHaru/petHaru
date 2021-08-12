@@ -139,17 +139,17 @@ public class WeightRecordController {
 		return "management.weightRecord.stats";
 	}
 	
-	@RequestMapping("chart")
-	public String chart(Model model,
-						@RequestParam(name="petId") int petId) {
-		
-		//주차별 평균
-		List<WeightStats> weightStats = service.getWeekAvg(petId);
-		
-		int size = weightStats.size();
-		
-		model.addAttribute("weekSize", size);
-		
-		return "management.weightRecord.chart";
-	}
+	/*
+	 * @RequestMapping("chart") public String chart(Model model,
+	 * 
+	 * @RequestParam(name="petId") int petId) {
+	 * 
+	 * //주차별 평균 List<WeightStats> weightStats = service.getWeekAvg(petId);
+	 * 
+	 * int size = weightStats.size();
+	 * 
+	 * model.addAttribute("weekSize", size);
+	 * 
+	 * return "management.weightRecord.chart"; }
+	 */
 }
