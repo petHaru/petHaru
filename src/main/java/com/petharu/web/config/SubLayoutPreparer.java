@@ -12,7 +12,6 @@ public class SubLayoutPreparer implements ViewPreparer {
 	public void execute(Request tilesContext, AttributeContext attributeContext) {
 		
 		Map<String, Object> model = tilesContext.getContext("request");
-		/* model.put("title", ""); */
 		model.put("data", "default data");
 		Object title = model.get("title");
 		if(title==null)

@@ -40,7 +40,7 @@ public class WeightRecordController {
 	//weightList조회
 	@RequestMapping("weightList")
 	public String weightList(Model model,
-							@RequestParam(name="petId") int petId) {
+							 @RequestParam(name="petId") int petId) {
 		//펫정보
 		Pet pet = service.getPet(petId);
 		
@@ -83,8 +83,8 @@ public class WeightRecordController {
 	
 	//edit조회
 	@RequestMapping("edit")
-	public String edit(Model model,
-					@RequestParam(name="id") int id) {
+	public String edit( Model model,
+						@RequestParam(name="id") int id) {
 		
 		Weight weight = new Weight();
 		weight = service.getWeight(id);

@@ -32,7 +32,7 @@ public class WeightRecordController {
 	}
 	
 	@RequestMapping("totalChart")
-	public List<WeightStats> weightStats( String spetId){
+	public List<WeightStats> weightStats(String spetId){
 		
 		//string to int
 		int petId = Integer.parseInt(spetId);
@@ -44,7 +44,7 @@ public class WeightRecordController {
 	}
 	
 	@RequestMapping("weekChart")
-	public List<WeightWithWeek> weekWeightList( String spetId){
+	public List<WeightWithWeek> weekWeightList(String spetId){
 		
 		//string to int
 		int petId = Integer.parseInt(spetId);
