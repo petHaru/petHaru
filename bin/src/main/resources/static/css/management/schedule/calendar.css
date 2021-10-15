@@ -4,7 +4,7 @@ html{
 }
 body{
     height: 100%;
-    font-family: "¸¼Àº °íµñ","°íµñ", sans-serif;
+    font-family: "ë§‘ì€ ê³ ë”•","ê³ ë”•", sans-serif;
     margin: 0;
 }
 h1,ul,ol{
@@ -28,9 +28,9 @@ ul,ol{
     align-items: center;
 }
 .btn{
-    display: inline-block; /*1. display ¼³Á¤¹Ù²Ù°í*/
-    text-indent: -999px; /*2. ÅØ½ºÆ® ¿ŞÂÊÀ¸·Î ¹Ğ¾î³¿ */
-    overflow: hidden;/*3. ³ÑÄ£ ÅØ½ºÆ® ¾Èº¸ÀÌµµ·Ï */
+    display: inline-block; /*1. display ì„¤ì •ë°”ê¾¸ê³ */
+    text-indent: -999px; /*2. í…ìŠ¤íŠ¸ ì™¼ìª½ìœ¼ë¡œ ë°€ì–´ëƒ„ */
+    overflow: hidden;/*3. ë„˜ì¹œ í…ìŠ¤íŠ¸ ì•ˆë³´ì´ë„ë¡ */
 }
 
 :root{
@@ -521,7 +521,7 @@ ul,ol{
         margin-right: 10px;
     }
 .hashtag-container{
-    width: 55%;
+    width: 80%;
     margin-bottom: 20px;
     margin-left: 30px;
 }
